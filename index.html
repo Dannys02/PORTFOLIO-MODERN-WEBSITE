@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danny Martha - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container-home-2 {
+            width: 250px;
+            height: 350px;
+            perspective: 1000px;
+            /* pindah ke sini */
+            margin: auto;
+            padding-top: 70px;
+        }
+
+        .container-3D {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            will-change: transform;
+            animation: gallery 60s linear infinite;
+        }
+
+        .span-3D {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+            -webkit-box-reflect: below 2.5px linear-gradient(transparent, transparent, rgba(3, 3, 3, 0.2));
+        }
+
+        .img-3D {
+            position: absolute;
+            border-radius: 10px;
+            border: 6px ridge #ccc;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        @keyframes gallery {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h1>Danny<span>S</span></h1>
+            <ul>
+                <li><a class="a-main-nav" href="#home"><i class="fas fa-house"></i> Home</a></li>
+                <li><a class="a-main-nav" href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a class="a-main-nav" href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a class="a-main-nav" href="#skills"><i class="fas fa-lightbulb"></i> Skills</a></li>
+                <li><a class="a-main-nav" href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <!-- 🔥 Tambahan background futuristik -->
+        <div class="background">
+            <div class="aurora"></div>
+            <div class="particles"></div>
+        </div>
+        <!-- =============================== -->
+
+        <div class="container-home-1">
+            <div class="border-h2-home">
+                <h2><span id="name-typing"></span></h2>
+            </div>
+            <div class="border-p-home">
+                <p>Web Developer • Creative Thinker • Problem Solver</p>
+                <div class="btn-2-home">
+                    <a href="#" class="btn-futuristic">Lihat Portfolio</a>
+                    <a href="#" class="btn-CV">Download-CV</a>
+                </div>
+                <div class="icon-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-home-2">
+            <!-- <img src="https://tse2.mm.bing.net/th/id/OIP.j5PeeyETieMW1Jqg8LGcigHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt=""> -->
+
+            <div class="container-3D">
+                <span class="span-3D" style="--i:1"><img class="img-3D"
+                        src="https://i.ytimg.com/vi/ASfRYyMv2j0/maxresdefault.jpg" alt=""></span>
+                <span class="span-3D" style="--i:2"><img class="img-3D"
+                        src="https://i.ytimg.com/vi/CQZxeoQeo5c/maxresdefault.jpg" alt=""></span>
+                <span class="span-3D" style="--i:3"><img class="img-3D"
+                        src="https://media.geeksforgeeks.org/wp-content/uploads/20201113231845/Screenshot204.png"
+                        alt=""></span>
+                <span class="span-3D" style="--i:4"><img class="img-3D"
+                        src="https://mobirise.com/engine/data/upload/2016/03/mobirise-main-theme.png" alt=""></span>
+                <span class="span-3D" style="--i:5"><img class="img-3D"
+                        src="https://i.ytimg.com/vi/ASfRYyMv2j0/maxresdefault.jpg" alt=""></span>
+                <span class="span-3D" style="--i:6"><img class="img-3D"
+                        src="https://i.ytimg.com/vi/CQZxeoQeo5c/maxresdefault.jpg" alt=""></span>
+                <span class="span-3D" style="--i:7"><img class="img-3D"
+                        src="https://media.geeksforgeeks.org/wp-content/uploads/20201113231845/Screenshot204.png"
+                        alt=""></span>
+                <span class="span-3D" style="--i:8"><img class="img-3D"
+                        src="https://mobirise.com/engine/data/upload/2016/03/mobirise-main-theme.png" alt=""></span>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-div-one">
+            <p>
+                Saya adalah seorang Frontend Developer Junior yang memiliki ketertarikan besar dalam menciptakan
+                tampilan web yang interaktif, responsif, dan ramah pengguna. Dengan pemahaman dasar HTML, CSS, dan
+                JavaScript, saya berusaha mengubah ide menjadi antarmuka yang nyata dan menarik.
+            </p>
+
+            <p>
+                Sebagai pengembang pemula, saya terus belajar teknologi modern seperti React dan Tailwind CSS untuk
+                memperkuat keterampilan saya. Saya percaya kombinasi kreativitas, rasa ingin tahu, dan semangat
+                belajar adalah kunci untuk berkembang di dunia frontend development.
+            </p>
+        </div>
+        <div class="about-div-two">
+            <div class="colom-about">
+                <h1>1+</h1>
+                <p>Experience years</p>
+            </div>
+            <div class="colom-about">
+                <h1>10+</h1>
+                <p>Project Completed</p>
+            </div>
+            <div class="colom-about">
+                <h1>10+</h1>
+                <p>Happy Clients</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <img src="https://th.bing.com/th/id/OIP.sUsZwSEt6VL3ADkmHZQpsQHaF2?w=241&h=191&c=7&r=0&o=7&pid=1.7&rm=3"
+                        alt="Website Toko Online">
+                </div>
+                <div class="portfolio-content">
+                    <h3>Website Toko Online</h3>
+                    <p>Desain minimalis untuk toko online fashion lokal.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <img src="https://cdn.dribbble.com/users/2292993/screenshots/8502973/media/68dca469b9854ebca2d8a4700d945ec9.jpg"
+                        alt="Landing Page Produk">
+                </div>
+                <div class="portfolio-content">
+                    <h3>Landing Page Produk</h3>
+                    <p>Promosi produk dengan konversi tinggi.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Boostrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <img src="https://themewagon.com/wp-content/uploads/2021/11/html.design.jpg" alt="Dashboard Admin">
+                </div>
+                <div class="portfolio-content">
+                    <h3>Dashboard Admin</h3>
+                    <p>Dashboard ringan dan mudah digunakan untuk admin.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <!-- Baris 1 -->
+            <div class="skill-box">
+                <i class="fab fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-js-square"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-bootstrap"></i>
+                <p>Bootstrap</p>
+            </div>
+
+            <!-- Baris 2 -->
+            <div class="skill-box">
+                <i class="fab fa-react"></i>
+                <p>React</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-css3"></i>
+                <p>Tailwind</p>
+            </div>
+            <div class="skill-box">
+                <i class="fab fa-github"></i>
+                <p>GitHub</p>
+            </div>
+            <div class="skill-box">
+                <i class="fas fa-laptop-code"></i>
+                <p>Responsive Design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /> -->
+
+
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p>Silakan hubungi saya melalui form berikut:</p>
+        <form>
+            <input type="text" placeholder="Nama Anda" required />
+            <input type="email" placeholder="Email Anda" required />
+            <textarea rows="5" placeholder="Pesan Anda" required></textarea>
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <img src="https://via.placeholder.com/150x50?text=GETSKILL" alt="GetSkill Logo">
+                <p>
+                    Getskill adalah Platform Pembelajaran yang digunakan untuk Upgrade ilmu dan wawasan secara lengkap.
+                </p>
+            </div>
+
+            <!-- Link Cepat -->
+            <div class="footer-column">
+                <h3>Link Cepat</h3>
+                <div class="footer-underline"></div>
+                <ul>
+                    <li><a class="footer-link" href="#">Kursus</a></li>
+                    <li><a class="footer-link" href="#">Events</a></li>
+                    <li><a class="footer-link" href="#">Berita</a></li>
+                    <li><a class="footer-link" href="#">Mentor</a></li>
+                    <li><a class="footer-link" href="#">Penukaran Hadiah</a></li>
+                </ul>
+            </div>
+
+            <!-- Website Kami -->
+            <div class="footer-column">
+                <h3>Website Kami</h3>
+                <div class="footer-underline"></div>
+                <ul>
+                    <li><a class="footer-link" href="#">Hubungi Kami</a></li>
+                    <li><a class="footer-link" href="#">FAQ</a></li>
+                    <li><a class="footer-link" href="#">Penukaran Hadiah</a></li>
+                </ul>
+            </div>
+
+            <!-- Sosial Media -->
+            <div class="footer-column">
+                <h3>Sosial Media</h3>
+                <div class="footer-underline"></div>
+                <p>Kunjungi sosial media kami</p>
+                <div class="footer-socials">
+                    <a class="footer-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="footer-social" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="footer-social" href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
