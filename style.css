@@ -11,7 +11,6 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    /* font-family: poppins; */
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
@@ -22,6 +21,7 @@ body {
     background: radial-gradient(circle at 50% 100%, #0d0221, #050010 80%);
 }
 
+/* HALAMAN NAVBAR */
 header {
     position: fixed;
     top: 0;
@@ -43,7 +43,7 @@ nav {
 
 nav h1 {
     font-size: 1.5rem;
-    color: var(--primary);
+    color: #bb86fc;
     letter-spacing: 1px;
 }
 
@@ -51,6 +51,10 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
+}
+
+.h1-nav {
+    display: none;
 }
 
 nav ul li a {
@@ -106,11 +110,46 @@ nav ul li a:hover i {
     opacity: 1;
 }
 
+/* HAMBURGER */
+.hamburger {
+    display: none;
+}
+
+/* STYLING SECTION */
 section {
     padding: 40px;
     background-color: transparent;
 }
 
+.div-section-title {
+    display: flex;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #bb86fc;
+    position: relative;
+    padding-bottom: 5px;
+    width: max-content;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    background: #bb86fc;
+    height: 4px;
+}
+
+/* HALAMAN HOME */
 .home {
     display: flex;
     flex-direction: column;
@@ -154,11 +193,11 @@ section {
     0% {
         transform: translate(-20%, -20%) scale(1) rotate(0deg);
     }
-
+    
     50% {
         transform: translate(-10%, -15%) scale(1.2) rotate(180deg);
     }
-
+    
     100% {
         transform: translate(-20%, -20%) scale(1) rotate(360deg);
     }
@@ -186,23 +225,23 @@ section {
 
 /* bintang berkedip */
 @keyframes twinkle {
-
+    
     0%,
     100% {
         opacity: 0;
         transform: scale(0.5);
     }
-
+    
     25% {
         opacity: 1;
         transform: scale(1.3);
     }
-
+    
     50% {
         opacity: 0.6;
         transform: scale(0.8);
     }
-
+    
     75% {
         opacity: 1;
         transform: scale(1.1);
@@ -233,25 +272,7 @@ section {
     display: inline-block;
     font-weight: bold;
     color: #fff;
-    border-right: 3px solid #9d4edd;
-    /* warna caret (ungu neon) */
     padding-right: 5px;
-    /* jarak kecil biar caret keliatan */
-    animation: blinkCaret 0.8s steps(1) infinite;
-}
-
-/* keyframe kedap-kedip */
-@keyframes blinkCaret {
-
-    0%,
-    49% {
-        border-color: #9d4edd;
-    }
-
-    50%,
-    100% {
-        border-color: transparent;
-    }
 }
 
 .btn-2-home {
@@ -371,65 +392,57 @@ section {
     width: 100%;
 }
 
-/* .container-home-2 img {
-    height: 390px;
-    width: 400px;
-    object-fit: cover;
-    border-radius: 2rem;
-
-    border: 2px solid rgba(150, 0, 255, 0.6);
-    box-shadow:
-        0 0 15px rgba(180, 0, 255, 0.6),
-        0 0 30px rgba(80, 0, 180, 0.5),
-        0 0 50px rgba(0, 150, 255, 0.3),
-        inset 0 0 20px rgba(150, 0, 255, 0.2);
-
-    backdrop-filter: blur(8px);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-    animation: neonPulsePurple 4s infinite alternate;
-    ;
+.container-home-2 {
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    /* pindah ke sini */
+    margin: auto;
+    padding-top: 70px;
+    will-change: transform;
 }
 
-.container-home-2 img:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow:
-        0 0 25px rgba(200, 0, 255, 0.9),
-        0 0 50px rgba(120, 0, 220, 0.7),
-        0 0 70px rgba(0, 180, 255, 0.5),
-        inset 0 0 30px rgba(160, 0, 255, 0.4);
+.container-3D {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+    animation: gallery 60s linear infinite;
 }
 
-@keyframes neonPulsePurple {
-    0% {
-        box-shadow:
-            0 0 12px rgba(180, 0, 255, 0.5),
-            0 0 25px rgba(120, 0, 220, 0.4),
-            0 0 40px rgba(0, 150, 255, 0.2),
-            inset 0 0 15px rgba(160, 0, 255, 0.3);
-    }
+.span-3D {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+    -webkit-box-reflect: below 2.5px linear-gradient(transparent, transparent, rgba(3, 3, 3, 0.2));
+    will-change: transform;
+}
 
-    100% {
-        box-shadow:
-            0 0 30px rgba(200, 0, 255, 0.9),
-            0 0 60px rgba(150, 0, 255, 0.6),
-            0 0 80px rgba(0, 200, 255, 0.4),
-            inset 0 0 30px rgba(180, 0, 255, 0.5);
+.img-3D {
+    position: absolute;
+    border-radius: 10px;
+    border: 6px ridge #ccc;
+    width: 200px;
+    height: 200px;
+    will-change: transform;
+    cursor: pointer;
+}
+
+@keyframes gallery {
+    from {
+        transform: rotateY(0deg);
+        will-change: transform;
+    }
+    
+    to {
+        transform: rotateY(360deg);
+        will-change: transform;
     }
 }
 
-@keyframes waveMotion {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-30px);
-    }
-} */
-
-/* ABOUT */
+/* HALAMAN ABOUT */
 .about-div-one {
     display: flex;
     flex-direction: column;
@@ -495,18 +508,9 @@ section {
     border-color: rgba(255, 0, 255, 0.6);
 }
 
+/* HALAMAN PORTFOLIO*/
 .portfolio {
     text-align: start;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: #bb86fc;
-    text-shadow: 0 0 5px rgba(187, 134, 252, 0.8),
-        0 0 5px rgba(0, 200, 255, 0.6);
 }
 
 .portfolio-grid {
@@ -556,7 +560,6 @@ section {
     font-size: 1.3rem;
     color: #bb86fc;
     margin-bottom: 10px;
-    text-shadow: 0 0 8px rgba(187, 134, 252, 0.8);
 }
 
 .portfolio-content p {
@@ -598,20 +601,11 @@ section {
     transform: scale(1.1);
 }
 
-
-
+/* HALAMAN SKILLS */
 
 .skills {
     padding: 80px 20px;
     text-align: center;
-}
-
-.skills .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #bb86fc;
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8),
-        0 0 20px rgba(0, 200, 255, 0.6);
 }
 
 .skills-grid {
@@ -643,7 +637,7 @@ section {
 .skill-box i {
     font-size: 4rem;
     color: #cfd8ff;
-    transition: transform 0.5s ease, color 0.5s ease, text-shadow 0.5s ease;
+    transition: transform 1s ease, color 0.5s ease, text-shadow 0.5s ease;
 }
 
 .skill-box p {
@@ -661,26 +655,18 @@ section {
 }
 
 .skill-box:hover i {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     color: #bb86fc;
     text-shadow: 0 0 2px #bb86fc, 0 0 2px rgba(0, 200, 255, 0.6);
 }
 
+/* HALAMAN CONTACT */
 .contact {
     padding: 100px 20px;
     text-align: center;
     background: linear-gradient(145deg, rgba(10, 0, 30, 0.95), rgba(0, 0, 20, 0.9));
-    border-top: 1px solid rgba(187, 134, 252, 0.3);
     position: relative;
     overflow: hidden;
-}
-
-.contact .section-title {
-    font-size: 2.5rem;
-    color: #bb86fc;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(187, 134, 252, 0.8),
-        0 0 25px rgba(0, 200, 255, 0.6);
 }
 
 .contact-subtitle {
@@ -690,9 +676,15 @@ section {
 }
 
 .contact-info {
-    margin-bottom: 40px;
+    margin: 0 auto;
     font-size: 1rem;
     color: #cfd8ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    max-width: 600px;
+    margin-bottom: 30px;
 }
 
 .contact-info p {
@@ -730,7 +722,9 @@ section {
 }
 
 .contact-form button {
+    margin-top: 30px;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
+    width: 50%;
     border: none;
     border-radius: 30px;
     padding: 14px;
@@ -746,19 +740,16 @@ section {
     box-shadow: 0 0 20px #bb86fc, 0 0 40px rgba(0, 200, 255, 0.6);
 }
 
-/* 🌙 Footer Styles */
+/* Footer */
 .footer {
-    background-color: #0a043c;
-    padding: 60px 20px;
+    background: radial-gradient(circle at 50% 100%, #0d0221, #050010 80%);
+    padding: 60px 60px;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-container {
-    max-width: 1200px;
-    margin: auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
 }
@@ -792,7 +783,17 @@ section {
     margin-bottom: 15px;
 }
 
-.footer-column ul {
+.footer-column-link {
+    flex: 1 1 150px;
+    padding-left: 50px;
+}
+
+.footer-column-link h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-column-link ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -829,11 +830,4 @@ section {
 .footer-social:hover {
     color: #ffffff;
     transform: scale(1.2);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-    }
 }
