@@ -37,3 +37,18 @@ const tombolTakSenonoh = document.querySelector("nav ul");
 function toggleMenu() {
   tombolTakSenonoh.classList.toggle("active");
 }
+
+/* ANIMASI BOTTOM */
+const elements = document.querySelectorAll(".from-bottom, .from-rotate");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show"); // kasih trigger animasi
+    } else {
+      entry.target.classList.remove("show"); // biar bisa animasi ulang
+    }
+  });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));

@@ -91,12 +91,18 @@
     }
     
     .colom-about {
-        padding: 25px 30px;
+        padding: 100px 10px;
     }
     
     /* HALAMAN PORTFOLIO RESPONSIF */
     .portfolio-grid {
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .portfolio-item {
+        width: 100%;
     }
     
     /* HALAMAN SKILLS */
