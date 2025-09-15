@@ -91,10 +91,6 @@
         flex-direction: column;
     }
     
-    .colom-about {
-        padding: 100px 10px;
-    }
-    
     /* HALAMAN PORTFOLIO RESPONSIF */
     .portfolio-grid {
         flex-direction: column;
