@@ -20,9 +20,9 @@
         position: fixed;
         top: 0;
         left: -100%;
-        width: 50%;
+        width: 60%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.55);
         backdrop-filter: blur(10px);
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -76,6 +76,12 @@
         font-size: 12px;
     }
     
+    .icon-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
     .img-3D {
         width: 200px;
         height: 180px;
@@ -113,6 +119,10 @@
     }
     
     /* FOOTER RESPONSIF */
+    .footer {
+        padding: 60px 30px;
+    }
+    
     .footer-container {
         flex-direction: column;
     }
@@ -120,5 +130,10 @@
     .footer-column-link {
         flex: 1 1 150px;
         padding-left: 0;
+    }
+    
+    /* modal */
+    .modal {
+        width: 80%;
     }
 }

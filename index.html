@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,7 +53,7 @@
                 <p>Web Developer • Creative Thinker • Problem Solver</p>
                 <div class="btn-2-home">
                     <a href="#portfolio" class="btn-futuristic">Lihat Portfolio</a>
-                    <a href="#" class="btn-CV">Download-CV</a>
+                    <a href="#" id="modal-CV" class="btn-CV">Download CV</a>
                 </div>
                 <div class="icon-links">
                     <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -286,6 +286,17 @@
             
         </div>
     </footer>
+    
+    <div class="modal" id="cvModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Preview CV</h2>
+            <!-- Ganti src dengan gambar CV kamu -->
+            <img src="MyCVGuys.png" alt="CV Preview">
+            <!-- Ganti href dengan file asli (pdf/jpg/png) -->
+            <a href="cv-download.pdf" download class="download-btn">Download CV</a>
+        </div>
+    </div>
     
     <script src="main.js"></script>
     

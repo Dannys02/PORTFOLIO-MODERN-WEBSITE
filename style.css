@@ -110,7 +110,6 @@ nav ul li a:hover i {
     opacity: 1;
 }
 
-/* HAMBURGER */
 .hamburger {
     display: none;
 }
@@ -118,7 +117,7 @@ nav ul li a:hover i {
 /* ANIMASI FADE BOTTOM */
 .from-bottom {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: transform 1.5s ease, opacity 1s ease;
     will-change: transform, opacity;
 }
@@ -129,13 +128,12 @@ nav ul li a:hover i {
 }
 
 .from-rotate {
-    transform: perspective(1000px) rotateY(-90deg);
+    transform: perspective(6000px) rotateY(-90deg);
     transition: transform 3s ease-in-out;
     will-change: transform;
 }
 
 .from-rotate.show {
-    opacity: 1;
     transform: rotateY(0);
 }
 
@@ -375,6 +373,103 @@ section {
     transform: scale(1.07);
 }
 
+/* Modal */
+/* Saat modal aktif, body dikasih class no-scroll */
+body.no-scroll {
+    overflow: hidden;
+    /* biar tidak bisa di scroll */
+}
+
+/* Blur untuk semua konten di belakang modal */
+body.modal-open .container-home-2,
+body.modal-open header,
+body.modal-open footer {
+    filter: blur(6px);
+    transition: filter 0.3s ease;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at 50% 100%, #0d0221, #050010 80%);
+    box-shadow: 0 0 15px rgba(80, 0, 255, 0.25),
+        inset 0 0 12px rgba(0, 200, 255, 0.15);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content h2 {
+    padding-bottom: 30px;
+    color: var(--bg);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 100%, #0d0221, #050010 80%);
+    backdrop-filter: blur(15px);
+    padding-inline: 25px;
+    padding-block: 30px;
+    outline: 1px solid rgba(140, 0, 255, 0.5);
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    padding-bottom: 30px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    box-shadow: 0 0 5px rgba(123, 47, 247, 0.6), 0 0 10px rgba(0, 198, 255, 0.4);
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.download-btn::after {
+    content: '';
+    position: absolute;
+    width: 400% !important;
+    height: 400% !important;
+    transform: rotate(55deg);
+    border-radius: 0;
+    top: 0;
+    left: -210%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    z-index: -1;
+    transition: all 0.8s ease;
+}
+
+.download-btn:hover::after {
+    left: 0;
+    transform: rotate(0);
+    border-radius: 10px;
+}
+
 .icon-links {
     display: flex;
     gap: 30px;
@@ -390,7 +485,7 @@ section {
     height: 45px;
     border-radius: 50%;
     background: linear-gradient(145deg, #1e0038, #00061a);
-    box-shadow: 0 0 15px rgba(140, 0, 255, 0.6), inset 0 0 10px rgba(0, 200, 255, 0.3);
+    box-shadow: 0 0 5px rgba(140, 0, 255, 0.6), inset 0 0 5px rgba(0, 200, 255, 0.3);
     color: #fff;
     font-size: 22px;
     transition: all 0.5s ease;
@@ -746,8 +841,10 @@ section {
 }
 
 .contact-form button {
+    position: relative;
     margin-top: 30px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background-color: transparent;
+    box-shadow: 0 0 5px rgba(0, 198, 255, 0.9), 0 0 5px rgba(255, 0, 204, 0.6);
     width: 50%;
     border: none;
     border-radius: 30px;
@@ -756,12 +853,32 @@ section {
     font-weight: bold;
     color: #fff;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    /* supaya ::after tidak keluar tombol */
+    z-index: 1;
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-form button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    top: 0;
+    right: -100%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    z-index: -1;
+    transition: right 0.6s ease, border-radius 0.6s ease;
+}
+
+.contact-form button:hover::after {
+    right: 0;
+    border-radius: 30px;
 }
 
 .contact-form button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #bb86fc, 0 0 40px rgba(0, 200, 255, 0.6);
+    box-shadow: 0 0 10px #bb86fc, 0 0 30px rgba(0, 200, 255, 0.6);
 }
 
 /* Footer */
@@ -779,12 +896,7 @@ section {
 }
 
 .footer-brand {
-    flex: 1 1 220px;
-    color: #cfcfe3;
-}
-
-.footer-brand img {
-    margin-bottom: 20px;
+    flex: 1 1 150px;
 }
 
 .footer-brand p {

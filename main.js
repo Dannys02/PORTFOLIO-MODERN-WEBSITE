@@ -31,12 +31,14 @@ function ketikLoop() {
 
 ketikLoop();
 
+
 /* TOMBOL NAVBAR MOBILE */
-const tombolTakSenonoh = document.querySelector("nav ul");
+const tombolBaik = document.querySelector("nav ul");
 
 function toggleMenu() {
-  tombolTakSenonoh.classList.toggle("active");
+  tombolBaik.classList.toggle("active");
 }
+
 
 /* ANIMASI BOTTOM */
 const elements = document.querySelectorAll(".from-bottom, .from-rotate");
@@ -52,3 +54,30 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 elements.forEach(el => observer.observe(el));
+
+
+/* MODAL DOWNLOAD CV */
+const modal = document.getElementById("cvModal");
+const openBtn = document.getElementById("modal-CV");
+const closeBtn = document.getElementById("closeModal");
+
+// buka modal
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.style.display = "flex";
+  document.body.classList.add("no-scroll", "modal-open");
+});
+
+// tutup modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  document.body.classList.remove("no-scroll", "modal-open");
+});
+
+// klik luar modal untuk tutup
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    document.body.classList.remove("no-scroll", "modal-open");
+  }
+});
