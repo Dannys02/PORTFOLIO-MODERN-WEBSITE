@@ -453,19 +453,20 @@ body.modal-open footer {
 .download-btn::after {
     content: '';
     position: absolute;
-    width: 400% !important;
+    width: 120% !important;
     height: 400% !important;
     transform: rotate(55deg);
     border-radius: 0;
     top: 0;
-    left: -210%;
+    left: -70%;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     z-index: -1;
-    transition: all 0.8s ease;
+    transition: all 0.6s ease;
 }
 
 .download-btn:hover::after {
-    left: 0;
+    left: -10%;
+    top: -10%;
     transform: rotate(0);
     border-radius: 10px;
 }
