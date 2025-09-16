@@ -96,7 +96,7 @@ form.addEventListener("submit", function (e) {
   const pesan = document.getElementById("PesanId").value.trim();
   const noAku = '6285645837298';
 
-  if(nama === "" || email === "" || alamat === "" || subjek === "" || pesan === "") {
+  if (nama === "" || email === "" || alamat === "" || subjek === "" || pesan === "") {
     alert('Semua input harus diisi!');
   } else {
     alert('Pesan anda berhasil dikirim');
@@ -106,3 +106,42 @@ form.addEventListener("submit", function (e) {
   }
 
 });
+
+
+// Animation number in colom about h1
+const counters = document.querySelectorAll("#numberAnimation");
+
+function animateCounter(el) {
+  const target = +el.getAttribute("data-target");
+  const duration = 2000; // durasi animasi
+  const fps = 60;
+  const totalFrames = Math.round((duration / 1000) * fps);
+  let frame = 0;
+
+  const counterInterval = setInterval(() => {
+    frame++;
+    const progress = frame / totalFrames;
+    const current = Math.round(target * progress);
+
+    el.textContent = current + "+";
+
+    if (frame === totalFrames) {
+      clearInterval(counterInterval);
+      el.textContent = target + "+"; // pastikan akhir pas
+    }
+  }, duration / totalFrames);
+}
+
+const observerTree = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      if (!el.classList.contains("counted")) {
+        animateCounter(el);
+        el.classList.add("counted");
+      }
+    }
+  });
+}, { threshold: 0.6 });
+
+counters.forEach(counter => observerTree.observe(counter));
