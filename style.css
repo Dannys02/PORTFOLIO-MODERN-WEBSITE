@@ -416,7 +416,6 @@ body.modal-open footer {
     padding-inline: 25px;
     padding-block: 30px;
     outline: 1px solid rgba(140, 0, 255, 0.5);
-    border-radius: 10px;
     width: 100%;
     text-align: center;
     position: relative;
@@ -455,8 +454,8 @@ body.modal-open footer {
     position: absolute;
     width: 120% !important;
     height: 400% !important;
-    transform: rotate(55deg);
-    border-radius: 0;
+    transform: rotate(60deg);
+    border-radius: 20px;
     top: 0;
     left: -70%;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -466,9 +465,8 @@ body.modal-open footer {
 
 .download-btn:hover::after {
     left: -10%;
-    top: -10%;
+    top: -100%;
     transform: rotate(0);
-    border-radius: 10px;
 }
 
 .icon-links {
@@ -597,7 +595,7 @@ body.modal-open footer {
     border: 1px solid rgba(180, 0, 255, 0.4);
     box-shadow: 0 0 15px rgba(80, 0, 255, 0.25),
         inset 0 0 12px rgba(0, 200, 255, 0.15);
-    transition: transform 1.5s ease, box-shadow 0.4s ease, border-color 0.4s ease, opacity 1s;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, opacity 1s;
     cursor: pointer;
     backdrop-filter: blur(8px);
 }

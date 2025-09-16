@@ -56,6 +56,41 @@ const observer = new IntersectionObserver((entries) => {
 elements.forEach(el => observer.observe(el));
 
 
+
+/*const elementsTwo = document.querySelectorAll(".from-rotate");
+
+const observerTwo = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // cari semua box skill di dalam satu baris (pakai parent grid misalnya)
+      const parent = entry.target.parentElement;
+      const rowItems = Array.from(parent.querySelectorAll(".from-rotate"));
+
+      // tentukan apakah row ganjil atau genap
+      const rowIndex = Array.from(parent.children).indexOf(entry.target) < 4 ? 0 : 1;
+
+      // kalau row pertama → animasi dari kiri ke kanan
+      // kalau row kedua → animasi dari kanan ke kiri
+      if (rowIndex === 0) {
+        rowItems.forEach((el, i) => {
+          setTimeout(() => el.classList.add("show"), i * 400); // jeda 0.4s per box
+        });
+      } else {
+        rowItems.slice().reverse().forEach((el, i) => {
+          setTimeout(() => el.classList.add("show"), i * 400);
+        });
+      }
+    } else {
+      entry.target.classList.remove("show"); // reset biar bisa ulang animasi
+    }
+  });
+}, { threshold: 0.2 });
+
+elementsTwo.forEach(el => observerTwo.observe(el));*/
+
+
+
+
 /* MODAL DOWNLOAD CV */
 const modal = document.getElementById("cvModal");
 const openBtn = document.getElementById("modal-CV");
