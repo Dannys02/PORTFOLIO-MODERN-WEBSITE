@@ -382,6 +382,7 @@ body.no-scroll {
 
 /* Blur untuk semua konten di belakang modal */
 body.modal-open .container-home-2,
+body.modal-open .container-home-1,
 body.modal-open header,
 body.modal-open footer {
     filter: blur(6px);
@@ -391,13 +392,15 @@ body.modal-open footer {
 .modal {
     display: none;
     position: fixed;
+    height: auto;
+    width: auto;
     top: 50%;
     left: 50%;
-    border-radius: 10px;
+    border-radius: 20px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle at 50% 100%, #0d0221, #050010 80%);
-    box-shadow: 0 0 15px rgba(80, 0, 255, 0.25),
-        inset 0 0 12px rgba(0, 200, 255, 0.15);
+    background-color: none;
+    /* box-shadow: 0 0 15px rgba(80, 0, 255, 0.25),
+        inset 0 0 12px rgba(0, 200, 255, 0.15); */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -416,8 +419,9 @@ body.modal-open footer {
     padding-inline: 25px;
     padding-block: 30px;
     outline: 1px solid rgba(140, 0, 255, 0.5);
-    width: 100%;
+        border-radius: 20px;
     text-align: center;
+    width: 50%;
     position: relative;
 }
 
@@ -425,6 +429,7 @@ body.modal-open footer {
     max-width: 100%;
     border-radius: 8px;
     padding-bottom: 30px;
+    cursor: pointer;
 }
 
 .close-btn {
@@ -920,7 +925,7 @@ body.modal-open footer {
 
 .footer-column-link {
     flex: 1 1 150px;
-    padding-left: 50px;
+    padding-left: 100px;
 }
 
 .footer-column-link h3 {

@@ -136,4 +136,8 @@
     .modal {
         width: 80%;
     }
+
+    .modal-content {
+        width: 100%;
+    }
 }
