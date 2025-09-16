@@ -109,39 +109,65 @@ form.addEventListener("submit", function (e) {
 
 
 // Animation number in colom about h1
+
+// Cari semua elemen yang punya id "numberAnimation"
 const counters = document.querySelectorAll("#numberAnimation");
 
+// Fungsi buat animasi angka naik
 function animateCounter(el) {
+  // Ambil angka tujuan dari atribut data-target
   const target = +el.getAttribute("data-target");
-  const duration = 2000; // durasi animasi
-  const fps = 60;
+  
+  // Lama animasi (2 detik)
+  const duration = 2000; 
+  
+  // Kecepatan update (60 kali per detik biar halus)
+  const fps = 60; 
+  
+  // Hitung berapa kali update dalam 2 detik
   const totalFrames = Math.round((duration / 1000) * fps);
+  
+  // Mulai dari frame ke-0
   let frame = 0;
 
-  const counterInterval = setInterval(() => {
-    frame++;
+  // Kalau sebelumnya ada animasi berjalan → hentikan dulu
+  clearInterval(el._interval); 
+
+  // Jalankan update angka tiap beberapa milidetik
+  el._interval = setInterval(() => {
+    frame++; // tiap loop nambah 1 frame
+    
+    // progress dihitung dari 0 sampai 1
     const progress = frame / totalFrames;
+    
+    // angka sekarang = target * progress
     const current = Math.round(target * progress);
 
+    // Tampilkan angka di elemen
     el.textContent = current + "+";
 
+    // Kalau sudah sampai frame terakhir → stop animasi
     if (frame === totalFrames) {
-      clearInterval(counterInterval);
-      el.textContent = target + "+"; // pastikan akhir pas
+      clearInterval(el._interval);
+      el.textContent = target + "+"; // pastikan angka pas di akhir
     }
-  }, duration / totalFrames);
+  }, duration / totalFrames); // jarak antar update
 }
 
+// Biar tau kapan elemen kelihatan di layar
 const observerTree = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    const el = entry.target;
+    
     if (entry.isIntersecting) {
-      const el = entry.target;
-      if (!el.classList.contains("counted")) {
-        animateCounter(el);
-        el.classList.add("counted");
-      }
+      // Kalau elemen kelihatan → mulai animasi angka
+      animateCounter(el); 
+    } else {
+      // Kalau elemen ilang dari layar → reset ke 0
+      el.textContent = "0"; 
     }
   });
-}, { threshold: 0.6 });
+}, { threshold: 0.6 }); // elemen dianggap "kelihatan" kalau 60% masuk layar
 
+// Jalankan observer buat semua elemen angka
 counters.forEach(counter => observerTree.observe(counter));
