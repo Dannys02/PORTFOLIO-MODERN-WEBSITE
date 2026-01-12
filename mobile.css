@@ -64,9 +64,6 @@
   /* HALAMAN HOME RESPONSIF*/
   #home {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .umkm {
@@ -116,7 +113,7 @@
   }
 
   .portfolio-item {
-    width: 360px;
+    width: 100%;
   }
 
   /* HALAMAN SKILLS */

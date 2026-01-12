@@ -174,7 +174,9 @@ section {
 /* HALAMAN HOME */
 .home {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   color: var(--bg);
 }
 
@@ -186,6 +188,10 @@ section {
   font-size: 1.2rem;
   color: var(--light-text);
   margin-top: 0.5rem;
+}
+
+.umkm {
+  max-width: 1000px;
 }
 
 /* Animasi background */
@@ -242,7 +248,6 @@ section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  outline: 1px solid rgba(140, 0, 255, 0.5);
   box-shadow: 0 0 15px rgba(123, 47, 247, 0.6), 0 0 30px rgba(0, 198, 255, 0.4);
 }
 
@@ -500,7 +505,7 @@ body.modal-open footer {
   border-radius: 16px;
   border: 1px solid rgba(180, 0, 255, 0.4);
   box-shadow: 0 0 15px rgba(80, 0, 255, 0.25),
-  inset 0 0 12px rgba(0, 200, 255, 0.15);
+    inset 0 0 12px rgba(0, 200, 255, 0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, opacity 1s;
   cursor: pointer;
   backdrop-filter: blur(8px);
@@ -527,8 +532,8 @@ body.modal-open footer {
 .colom-about:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7),
-  0 0 20px rgba(140, 0, 255, 0.7),
-  0 0 40px rgba(0, 200, 255, 0.5);
+    0 0 20px rgba(140, 0, 255, 0.7),
+    0 0 40px rgba(0, 200, 255, 0.5);
   border-color: rgba(255, 0, 255, 0.6);
 }
 
@@ -611,9 +616,15 @@ body.modal-open footer {
   color: white;
 }
 
+.div-btn-portfolio {
+  display: flex;
+  align-items: center;
+  padding-block: 20px;
+}
+
 .btn-portfolio {
-  margin-top: 30px;
-  padding: 12px 20px;
+  text-decoration: none;
+  padding: 12px 24px;
   border-radius: 30px;
   color: white;
   background: #bb86fc;
@@ -623,8 +634,8 @@ body.modal-open footer {
 .portfolio-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8),
-  0 5px 15px rgba(140, 0, 255, 0.8),
-  0 5px 15px rgba(0, 200, 255, 0.6);
+    0 5px 15px rgba(140, 0, 255, 0.8),
+    0 5px 15px rgba(0, 200, 255, 0.6);
 }
 
 .portfolio-item:hover img {
@@ -726,7 +737,7 @@ body.modal-open footer {
 }
 
 .contact-form {
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   display: grid;
   gap: 20px;

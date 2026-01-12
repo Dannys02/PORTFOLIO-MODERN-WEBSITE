@@ -1,389 +1,340 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Danny Martha - Portfolio</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="mobile.css" />
-        <style></style>
-    </head>
 
-    <body>
-        <header>
-            <nav>
-                <h1>Danny<span>S</span></h1>
-                <ul>
-                    <h1 class="h1-nav">Menu</h1>
-                    <li>
-                        <a class="a-main-nav" href="#home"
-                            ><i class="fas fa-house"></i> Home</a
-                        >
-                    </li>
-                    <li>
-                        <a class="a-main-nav" href="#about"
-                            ><i class="fas fa-user"></i> About</a
-                        >
-                    </li>
-                    <li>
-                        <a class="a-main-nav" href="#portfolio"
-                            ><i class="fas fa-briefcase"></i> Portfolio</a
-                        >
-                    </li>
-                    <li>
-                        <a class="a-main-nav" href="#skills"
-                            ><i class="fas fa-lightbulb"></i> Skills</a
-                        >
-                    </li>
-                    <li>
-                        <a class="a-main-nav" href="#contact"
-                            ><i class="fas fa-envelope"></i> Contact</a
-                        >
-                    </li>
-                </ul>
-                <div class="hamburger" id="btn-navbar" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danny Martha - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <style></style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Danny<span>S</span></h1>
+            <ul>
+                <h1 class="h1-nav">Menu</h1>
+                <li>
+                    <a class="a-main-nav" href="#home"><i class="fas fa-house"></i> Home</a>
+                </li>
+                <li>
+                    <a class="a-main-nav" href="#about"><i class="fas fa-user"></i> About</a>
+                </li>
+                <li>
+                    <a class="a-main-nav" href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a>
+                </li>
+                <li>
+                    <a class="a-main-nav" href="#skills"><i class="fas fa-lightbulb"></i> Skills</a>
+                </li>
+                <li>
+                    <a class="a-main-nav" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="btn-navbar" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <!-- 🔥 Tambahan background futuristik -->
+        <div>
+            <div class="container-home-1 from-bottom">
+                <div class="border-h2-home">
+                    <h2><span id="name-typing"></span></h2>
                 </div>
-            </nav>
-        </header>
-
-        <section class="home" id="home">
-            <!-- 🔥 Tambahan background futuristik -->
-            <div>
-                <div class="container-home-1 from-bottom">
-                    <div class="border-h2-home">
-                        <h2><span id="name-typing"></span></h2>
+                <div class="border-p-home">
+                    <div class="umkm">
+                        <p>
+                            Membuat website sederhana untuk UMKM yang bikin
+                            usaha terlihat profesional dan pelanggan mudah
+                            order lewat WhatsApp
+                        </p>
                     </div>
-                    <div class="border-p-home">
-                        <div class="umkm">
-                            <p>
-                                Membuat website sederhana untuk UMKM yang bikin
-                                usaha terlihat profesional dan pelanggan mudah
-                                order lewat WhatsApp
-                            </p>
-                        </div>
 
-                        <div class="btn-2-home">
-                            <a href="#portfolio" class="btn-futuristic"
-                                >Lihat Portfolio</a
-                            >
-                            <a href="#" id="modal-CV" class="btn-CV"
-                                >Download CV</a
-                            >
-                        </div>
-                        <div class="icon-links">
-                            <a href="https://facebook.com" target="_blank"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a>
-                            <a href="https://twitter.com" target="_blank"
-                                ><i class="fab fa-twitter"></i
-                            ></a>
-                            <a href="https://instagram.com" target="_blank"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                            <a href="https://github.com" target="_blank"
-                                ><i class="fab fa-github"></i
-                            ></a>
-                        </div>
+                    <div class="btn-2-home">
+                        <a href="#portfolio" class="btn-futuristic">Lihat Portfolio</a>
+                        <a href="#" id="modal-CV" class="btn-CV">Download CV</a>
+                    </div>
+                    <div class="icon-links">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="about" id="about">
-            <div class="div-section-title from-bottom">
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-div-one">
-                <p class="from-bottom">
-                    Saya adalah seorang Frontend Developer Junior yang memiliki
-                    ketertarikan besar dalam menciptakan tampilan web yang
-                    interaktif, responsif, dan ramah pengguna. Dengan pemahaman
-                    dasar HTML, CSS, dan JavaScript, saya berusaha mengubah ide
-                    menjadi antarmuka yang nyata dan menarik.
-                </p>
-
-                <p class="from-bottom">
-                    Sebagai pengembang pemula, saya terus belajar teknologi
-                    modern seperti React dan Tailwind CSS untuk memperkuat
-                    keterampilan saya. Saya percaya kombinasi kreativitas, rasa
-                    ingin tahu, dan semangat belajar adalah kunci untuk
-                    berkembang di dunia frontend development.
-                </p>
-            </div>
-
-            <div class="about-div-two">
-                <div class="from-bottom">
-                    <div class="colom-about">
-                        <h1 id="numberAnimation" data-target="1">0</h1>
-                        <p>Experience years</p>
-                    </div>
-                </div>
-                <div class="from-bottom">
-                    <div class="colom-about">
-                        <h1 id="numberAnimation" data-target="30">0</h1>
-                        <p>Project Completed</p>
-                    </div>
-                </div>
-                <div class="from-bottom">
-                    <div class="colom-about">
-                        <h1 id="numberAnimation" data-target="10">0</h1>
-                        <p>Happy Clients</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio" id="portfolio">
-            <div class="div-section-title">
-                <h2 class="section-title from-bottom">Portfolio</h2>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                src="https://th.bing.com/th/id/OIP.sUsZwSEt6VL3ADkmHZQpsQHaF2?w=241&h=191&c=7&r=0&o=7&pid=1.7&rm=3"
-                                alt="Website Toko Online"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Website Toko Online</h3>
-                            <p>
-                                Desain minimalis untuk toko online fashion
-                                lokal.
-                            </p>
-                            <div class="tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap</span>
-                            </div>
-                            <a class="btn-portfolio" href=""> Lihat detail </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 2 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                src="https://cdn.dribbble.com/users/2292993/screenshots/8502973/media/68dca469b9854ebca2d8a4700d945ec9.jpg"
-                                alt="Landing Page Produk"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Landing Page Produk</h3>
-                            <p>Promosi produk dengan konversi tinggi.</p>
-                            <div class="tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Boostrap</span>
-                            </div>
-                            <a class="btn-portfolio" href=""> Lihat detail </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                src="https://themewagon.com/wp-content/uploads/2021/11/html.design.jpg"
-                                alt="Dashboard Admin"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Dashboard Admin</h3>
-                            <p>
-                                Dashboard ringan dan mudah digunakan untuk
-                                admin.
-                            </p>
-                            <div class="tags">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                                <span>Bootstrap</span>
-                            </div>
-                            <a class="btn-portfolio" href=""> Lihat detail </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills" id="skills">
-            <div class="div-section-title from-bottom">
-                <h2 class="section-title">Skills</h2>
-            </div>
-            <div class="skills-grid">
-                <!-- Baris 1 -->
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-html5"></i>
-                    <p>HTML</p>
-                </div>
-
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-css3-alt"></i>
-                    <p>CSS</p>
-                </div>
-
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-js-square"></i>
-                    <p>JavaScript</p>
-                </div>
-
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-bootstrap"></i>
-                    <p>Bootstrap</p>
-                </div>
-
-                <!-- Baris 2 -->
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-react"></i>
-                    <p>React</p>
-                </div>
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-css3"></i>
-                    <p>Tailwind</p>
-                </div>
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-github"></i>
-                    <p>GitHub</p>
-                </div>
-                <div class="skill-box from-rotate">
-                    <i class="fas fa-laptop-code"></i>
-                    <p>Responsive Design</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="div-section-title from-bottom">
-                <h2 class="section-title">Contact Me</h2>
-            </div>
-            <p class="contact-subtitle from-bottom">
-                Tertarik untuk bekerja sama atau sekadar ngobrol? Hubungi saya
-                sekarang!
-            </p>
-
-            <div class="contact-info">
-                <p class="from-bottom">
-                    <i class="fas fa-phone-alt"></i> +62 856-4583-7298
-                </p>
-                <p class="from-bottom">
-                    <i class="fas fa-envelope"></i> webdannys@gmail.com
-                </p>
-            </div>
-
-            <form id="FormPage" class="contact-form from-bottom">
-                <input type="text" id="NamaId" placeholder="Nama Anda" />
-                <input type="email" id="EmailId" placeholder="Email Anda" />
-                <input type="text" id="AlamatId" placeholder="Alamat Anda" />
-                <input type="text" id="SubjekId" placeholder="Subjek" />
-                <textarea
-                    rows="5"
-                    id="PesanId"
-                    placeholder="Pesan Anda"
-                ></textarea>
-                <button type="submit">Kirim Pesan</button>
-            </form>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <!-- Brand Section -->
-                <div class="footer-brand">
-                    <h3 class="from-bottom">Dannys</h3>
-                    <div class="footer-underline from-bottom"></div>
-                    <p class="from-bottom">
-                        Membuat website sederhana untuk UMKM yang bikin usaha
-                        terlihat profesional dan pelanggan mudah order lewat
-                        WhatsApp
-                    </p>
-                </div>
-
-                <!-- Link Cepat -->
-                <div class="footer-column-link">
-                    <h3 class="from-bottom">Link Cepat</h3>
-                    <div class="footer-underline from-bottom"></div>
-                    <ul class="from-bottom">
-                        <li><a class="footer-link" href="#home">Home</a></li>
-                        <li><a class="footer-link" href="#about">About</a></li>
-                        <li>
-                            <a class="footer-link" href="#portfolio"
-                                >Portfolio</a
-                            >
-                        </li>
-                        <li><a class="footer-link" href="#">Skills</a></li>
-                        <li>
-                            <a class="footer-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Sosial Media -->
-                <div class="footer-column">
-                    <h3 class="from-bottom">Sosial Media</h3>
-                    <div class="footer-underline from-bottom"></div>
-                    <p class="from-bottom">Kunjungi sosial media kami</p>
-                    <div class="footer-socials from-bottom">
-                        <a
-                            class="footer-social"
-                            href="https://facebook.com"
-                            target="_blank"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                            class="footer-social"
-                            href="https://twitter.com"
-                            target="_blank"
-                            ><i class="fab fa-twitter"></i
-                        ></a>
-                        <a
-                            class="footer-social"
-                            href="https://instagram.com"
-                            target="_blank"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a
-                            class="footer-social"
-                            href="https://github.com"
-                            target="_blank"
-                            ><i class="fab fa-github"></i
-                        ></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <div class="modal" id="cvModal">
-            <div class="modal-content">
-                <span class="close-btn" id="closeModal">&times;</span>
-                <h2>Preview CV</h2>
-                <img src="MyCVGuys.png" alt="CV Preview" />
-                <a href="cv-download.pdf" download class="download-btn"
-                    >Download CV</a
-                >
             </div>
         </div>
+    </section>
 
-        <script src="main.js"></script>
-    </body>
+    <section class="about" id="about">
+        <div class="div-section-title from-bottom">
+            <h2 class="section-title">About Me</h2>
+        </div>
+        <div class="about-div-one">
+            <p class="from-bottom">
+                Saya adalah seorang Frontend Developer Junior yang memiliki
+                ketertarikan besar dalam menciptakan tampilan web yang
+                interaktif, responsif, dan ramah pengguna. Dengan pemahaman
+                dasar HTML, CSS, dan JavaScript, saya berusaha mengubah ide
+                menjadi antarmuka yang nyata dan menarik.
+            </p>
+
+            <p class="from-bottom">
+                Sebagai pengembang pemula, saya terus belajar teknologi
+                modern seperti React dan Tailwind CSS untuk memperkuat
+                keterampilan saya. Saya percaya kombinasi kreativitas, rasa
+                ingin tahu, dan semangat belajar adalah kunci untuk
+                berkembang di dunia frontend development.
+            </p>
+        </div>
+
+        <div class="about-div-two">
+            <div class="from-bottom">
+                <div class="colom-about">
+                    <h1 id="numberAnimation" data-target="1">0</h1>
+                    <p>Experience years</p>
+                </div>
+            </div>
+            <div class="from-bottom">
+                <div class="colom-about">
+                    <h1 id="numberAnimation" data-target="30">0</h1>
+                    <p>Project Completed</p>
+                </div>
+            </div>
+            <div class="from-bottom">
+                <div class="colom-about">
+                    <h1 id="numberAnimation" data-target="10">0</h1>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="div-section-title">
+            <h2 class="section-title from-bottom">Portfolio</h2>
+        </div>
+        <div class="portfolio-grid">
+            <!-- Portfolio Item 1 -->
+            <div class="from-bottom">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://th.bing.com/th/id/OIP.sUsZwSEt6VL3ADkmHZQpsQHaF2?w=241&h=191&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="Website Toko Online" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Website Toko Online</h3>
+                        <p>
+                            Desain minimalis untuk toko online fashion
+                            lokal.
+                        </p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="div-btn-portfolio">
+                            <a class="btn-portfolio" href=""> Lihat detail </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="from-bottom">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://cdn.dribbble.com/users/2292993/screenshots/8502973/media/68dca469b9854ebca2d8a4700d945ec9.jpg"
+                            alt="Landing Page Produk" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Landing Page Produk</h3>
+                        <p>Promosi produk dengan konversi tinggi.</p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Boostrap</span>
+                        </div>
+                        <div class="div-btn-portfolio">
+                            <a class="btn-portfolio" href=""> Lihat detail </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 3 -->
+            <div class="from-bottom">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://themewagon.com/wp-content/uploads/2021/11/html.design.jpg"
+                            alt="Dashboard Admin" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Dashboard Admin</h3>
+                        <p>
+                            Dashboard ringan dan mudah digunakan untuk
+                            admin.
+                        </p>
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="div-btn-portfolio">
+                            <a class="btn-portfolio" href=""> Lihat detail </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="div-section-title from-bottom">
+            <h2 class="section-title">Skills</h2>
+        </div>
+        <div class="skills-grid">
+            <!-- Baris 1 -->
+            <div class="skill-box from-rotate">
+                <i class="fab fa-html5"></i>
+                <p>HTML</p>
+            </div>
+
+            <div class="skill-box from-rotate">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+
+            <div class="skill-box from-rotate">
+                <i class="fab fa-js-square"></i>
+                <p>JavaScript</p>
+            </div>
+
+            <div class="skill-box from-rotate">
+                <i class="fab fa-bootstrap"></i>
+                <p>Bootstrap</p>
+            </div>
+
+            <!-- Baris 2 -->
+            <div class="skill-box from-rotate">
+                <i class="fab fa-react"></i>
+                <p>React</p>
+            </div>
+            <div class="skill-box from-rotate">
+                <i class="fab fa-css3"></i>
+                <p>Tailwind</p>
+            </div>
+            <div class="skill-box from-rotate">
+                <i class="fab fa-github"></i>
+                <p>GitHub</p>
+            </div>
+            <div class="skill-box from-rotate">
+                <i class="fas fa-laptop-code"></i>
+                <p>Responsive Design</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="div-section-title from-bottom">
+            <h2 class="section-title">Contact Me</h2>
+        </div>
+        <p class="contact-subtitle from-bottom">
+            Tertarik untuk bekerja sama atau sekadar ngobrol? Hubungi saya
+            sekarang!
+        </p>
+
+        <div class="contact-info">
+            <p class="from-bottom">
+                <i class="fas fa-phone-alt"></i> +62 856-4583-7298
+            </p>
+            <p class="from-bottom">
+                <i class="fas fa-envelope"></i> webdannys@gmail.com
+            </p>
+        </div>
+
+        <form id="FormPage" class="contact-form from-bottom">
+            <input type="text" id="NamaId" placeholder="Nama Anda" />
+            <input type="email" id="EmailId" placeholder="Email Anda" />
+            <input type="text" id="AlamatId" placeholder="Alamat Anda" />
+            <input type="text" id="SubjekId" placeholder="Subjek" />
+            <textarea rows="5" id="PesanId" placeholder="Pesan Anda"></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <h3 class="from-bottom">Dannys</h3>
+                <div class="footer-underline from-bottom"></div>
+                <p class="from-bottom">
+                    Membuat website sederhana untuk UMKM yang bikin usaha
+                    terlihat profesional dan pelanggan mudah order lewat
+                    WhatsApp
+                </p>
+            </div>
+
+            <!-- Link Cepat -->
+            <div class="footer-column-link">
+                <h3 class="from-bottom">Link Cepat</h3>
+                <div class="footer-underline from-bottom"></div>
+                <ul class="from-bottom">
+                    <li><a class="footer-link" href="#home">Home</a></li>
+                    <li><a class="footer-link" href="#about">About</a></li>
+                    <li>
+                        <a class="footer-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li><a class="footer-link" href="#">Skills</a></li>
+                    <li>
+                        <a class="footer-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sosial Media -->
+            <div class="footer-column">
+                <h3 class="from-bottom">Sosial Media</h3>
+                <div class="footer-underline from-bottom"></div>
+                <p class="from-bottom">Kunjungi sosial media kami</p>
+                <div class="footer-socials from-bottom">
+                    <a class="footer-social" href="https://facebook.com" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="footer-social" href="https://twitter.com" target="_blank"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="footer-social" href="https://instagram.com" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a class="footer-social" href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="cvModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Preview CV</h2>
+            <img src="MyCVGuys.png" alt="CV Preview" />
+            <a href="cv-download.pdf" download class="download-btn">Download CV</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
 </html>
