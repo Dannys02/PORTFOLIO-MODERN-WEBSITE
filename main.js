@@ -117,29 +117,29 @@ const counters = document.querySelectorAll("#numberAnimation");
 function animateCounter(el) {
   // Ambil angka tujuan dari atribut data-target
   const target = +el.getAttribute("data-target");
-  
+
   // Lama animasi (2 detik)
-  const duration = 2000; 
-  
+  const duration = 2000;
+
   // Kecepatan update (60 kali per detik biar halus)
-  const fps = 60; 
-  
+  const fps = 60;
+
   // Hitung berapa kali update dalam 2 detik
   const totalFrames = Math.round((duration / 1000) * fps);
-  
+
   // Mulai dari frame ke-0
   let frame = 0;
 
   // Kalau sebelumnya ada animasi berjalan → hentikan dulu
-  clearInterval(el._interval); 
+  clearInterval(el._interval);
 
   // Jalankan update angka tiap beberapa milidetik
   el._interval = setInterval(() => {
     frame++; // tiap loop nambah 1 frame
-    
+
     // progress dihitung dari 0 sampai 1
     const progress = frame / totalFrames;
-    
+
     // angka sekarang = target * progress
     const current = Math.round(target * progress);
 
@@ -158,13 +158,13 @@ function animateCounter(el) {
 const observerTree = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     const el = entry.target;
-    
+
     if (entry.isIntersecting) {
       // Kalau elemen kelihatan → mulai animasi angka
-      animateCounter(el); 
+      animateCounter(el);
     } else {
       // Kalau elemen ilang dari layar → reset ke 0
-      el.textContent = "0"; 
+      el.textContent = "0";
     }
   });
 }, { threshold: 0.6 }); // elemen dianggap "kelihatan" kalau 60% masuk layar

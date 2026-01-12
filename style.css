@@ -82,7 +82,8 @@ nav ul li a i {
   left: 0;
   bottom: 0;
   width: 0;
-  height: 2px;
+  height: 3px;
+  border-radius: 20px;
   background: #1e6fbe;
   transform-origin: left;
   cursor: pointer;
@@ -270,6 +271,7 @@ section {
 
 .btn-futuristic:hover {
   box-shadow: 0 0 20px rgba(0, 198, 255, 0.9), 0 0 40px rgba(255, 0, 204, 0.6);
+  background: transparent;
   transform: scale(1.07);
 }
 
