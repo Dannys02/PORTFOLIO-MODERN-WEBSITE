@@ -167,7 +167,7 @@ const observerTree = new IntersectionObserver((entries) => {
       el.textContent = "0";
     }
   });
-}, { threshold: 0.6 }); // elemen dianggap "kelihatan" kalau 60% masuk layar
+}, { threshold: 1 }); // elemen dianggap "kelihatan" kalau 60% masuk layar
 
 // Jalankan observer buat semua elemen angka
 counters.forEach(counter => observerTree.observe(counter));

@@ -41,7 +41,7 @@ nav {
   padding: 1rem 2rem;
 }
 
-nav h1 {
+nav h2 {
   font-size: 1.5rem;
   color: #bb86fc;
   letter-spacing: 1px;
@@ -129,13 +129,14 @@ nav ul li a:hover i {
 }
 
 .from-rotate {
-  transform: perspective(6000px) rotateY(-90deg);
+  transform: perspective(800px) rotateY(-90deg);
   transition: transform 3s ease-in-out;
+  transform-style: preserve-3d
   will-change: transform;
 }
 
 .from-rotate.show {
-  transform: rotateY(0);
+  transform: perspective(1000px) rotateY(0deg);
 }
 
 /* STYLING SECTION */
@@ -433,46 +434,6 @@ body.modal-open footer {
   will-change: transform;
 }
 
-.container-3D {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-  animation: gallery 60s linear infinite;
-}
-
-.span-3D {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-  -webkit-box-reflect: below 2.5px linear-gradient(transparent, transparent, rgba(3, 3, 3, 0.2));
-  will-change: transform;
-}
-
-.img-3D {
-  position: absolute;
-  border-radius: 10px;
-  border: 6px ridge #ccc;
-  width: 200px;
-  height: 200px;
-  will-change: transform;
-  cursor: pointer;
-}
-
-@keyframes gallery {
-  from {
-    transform: rotateY(0deg);
-    will-change: transform;
-  }
-
-  to {
-    transform: rotateY(360deg);
-    will-change: transform;
-  }
-}
-
 /* HALAMAN ABOUT */
 .about-div-one {
   display: flex;
@@ -507,13 +468,13 @@ body.modal-open footer {
   border-radius: 16px;
   border: 1px solid rgba(180, 0, 255, 0.4);
   box-shadow: 0 0 15px rgba(80, 0, 255, 0.25),
-    inset 0 0 12px rgba(0, 200, 255, 0.15);
+  inset 0 0 12px rgba(0, 200, 255, 0.15);
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, opacity 1s;
   cursor: pointer;
   backdrop-filter: blur(8px);
 }
 
-.colom-about h1 {
+.colom-about h2 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #bb86fc;
@@ -534,8 +495,8 @@ body.modal-open footer {
 .colom-about:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7),
-    0 0 20px rgba(140, 0, 255, 0.7),
-    0 0 40px rgba(0, 200, 255, 0.5);
+  0 0 20px rgba(140, 0, 255, 0.7),
+  0 0 40px rgba(0, 200, 255, 0.5);
   border-color: rgba(255, 0, 255, 0.6);
 }
 
@@ -546,11 +507,10 @@ body.modal-open footer {
 
 .portfolio-grid {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
+  align-items: stretch; 
 }
 
 .portfolio-item {
@@ -558,6 +518,8 @@ body.modal-open footer {
   border-radius: 15px;
   border: 1px solid rgba(140, 0, 255, 0.5);
   overflow: hidden;
+  width: 350px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 15px rgba(140, 0, 255, 0.3);
@@ -567,7 +529,7 @@ body.modal-open footer {
 
 .portfolio-img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -580,9 +542,12 @@ body.modal-open footer {
 }
 
 .portfolio-content {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
   color: #cfd8ff;
   flex-grow: 1;
+  justify-content: space-between;
 }
 
 .portfolio-content h3 {
@@ -600,6 +565,7 @@ body.modal-open footer {
   display: flex;
   gap: 10px;
   justify-content: start;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
 
@@ -618,26 +584,32 @@ body.modal-open footer {
   color: white;
 }
 
-.div-btn-portfolio {
-  display: flex;
-  align-items: center;
-  padding-block: 20px;
-}
-
 .btn-portfolio {
   text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 30px;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
   color: white;
   background: #bb86fc;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn-portfolio:hover {
+  background: transparent;
+  border-color: #bb86fc;
+  color: #bb86fc;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.4);
 }
 
 /* Hover Effect */
 .portfolio-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8),
-    0 5px 15px rgba(140, 0, 255, 0.8),
-    0 5px 15px rgba(0, 200, 255, 0.6);
+  0 5px 15px rgba(140, 0, 255, 0.8),
+  0 5px 15px rgba(0, 200, 255, 0.6);
 }
 
 .portfolio-item:hover img {
@@ -662,13 +634,15 @@ body.modal-open footer {
   background: linear-gradient(145deg, rgba(20, 0, 40, 0.9), rgba(0, 0, 20, 0.8));
   border: 1px solid rgba(140, 0, 255, 0.4);
   border-radius: 15px;
-  width: 100%;
-  height: 100%;
+  width: 290px;
+  height: 290px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: transform 1.5s ease;
+  cubic-bezier(0.2, 0.8, 0.2, 1);
+  backface-visibility: hidden;
   box-shadow: 0 0 10px rgba(140, 0, 255, 0.2);
   cursor: pointer;
   position: relative;
@@ -859,6 +833,7 @@ body.modal-open footer {
 
 .footer-link {
   color: #cfcfe3;
+  width: fit-content;
   text-decoration: none;
   display: block;
   margin-bottom: 8px;

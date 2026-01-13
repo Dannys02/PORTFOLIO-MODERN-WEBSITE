@@ -89,12 +89,6 @@
     font-size: 16px;
   }
 
-  .img-3D {
-    width: 200px;
-    height: 180px;
-    border: 4px ridge #ccc;
-  }
-
   /* HALAMAN ABOUT RESPONSIF */
   .about-div-one p {
     text-align: start;
@@ -113,7 +107,7 @@
   }
 
   .portfolio-item {
-    width: 100%;
+    width: 390px;
   }
 
   /* HALAMAN SKILLS */
