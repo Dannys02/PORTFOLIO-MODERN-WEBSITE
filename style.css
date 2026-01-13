@@ -4,6 +4,7 @@
   --light-text: #636e72;
   --bg: #ffffff;
   --bg-light: #f5f6fa;
+  --bgMid-light: #e0e3eb;
 }
 
 * {
@@ -188,7 +189,7 @@ section {
 
 .home p {
   font-size: 1.2rem;
-  color: var(--light-text);
+  color: var(--bgMid-light);
   margin-top: 0.5rem;
 }
 

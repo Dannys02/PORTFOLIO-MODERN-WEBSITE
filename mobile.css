@@ -1,5 +1,5 @@
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -112,7 +112,7 @@
 
   /* HALAMAN SKILLS */
   .skills-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr) !important;
   }
 
   /* HALAMAN CONTACT */
