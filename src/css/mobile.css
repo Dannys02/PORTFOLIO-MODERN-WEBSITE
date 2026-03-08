@@ -1,5 +1,5 @@
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -62,31 +62,57 @@
   }
 
   /* HALAMAN HOME RESPONSIF*/
-  #home {
+  .container-home {
+    padding-top: 0 !important;
+    flex-direction: column;
+    /* Gambar di atas atau di bawah, di sini saya set di bawah */
+    gap: 40px;
+    /* Jarak antar elemen yang wajar */
+    text-align: center;
+  }
+  
+  .container-home-1 {
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .umkm {
-    font-size: 6px !important;
+  .container-home-1, .container-home-2 {
+    width: 100%;
+  }
+
+  .border-h2-home {
+    justify-content: center;
   }
 
   #name-typing {
-    font-size: 29px;
+    font-size: 1.5rem;
   }
 
-  .border-p-home p {
-    font-size: 16px;
+  .umkm p {
+    font-size: 1rem !important;
+    /* Gunakan ukuran yang terbaca manusia */
+    text-align: center;
   }
 
-  .btn-CV,
-  .btn-futuristic {
-    padding: 14px 20px;
+  .btn-2-home {
+    justify-content: center;
+    flex-direction: column;
+    /* Tombol tumpuk ke bawah di layar kecil */
+    gap: 15px;
   }
 
-  .icon-links a {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
+  .icon-links {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .container-home-2 img {
+    height: auto;
+    max-width: 100%;
+    /* Agar gambar tidak memenuhi layar hp sepenuhnya */
+    margin: 0 auto;
   }
 
   /* HALAMAN ABOUT RESPONSIF */

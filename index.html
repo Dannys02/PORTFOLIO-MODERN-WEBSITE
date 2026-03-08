@@ -17,15 +17,15 @@
             media="print"
             onload="this.media='all'"
         />
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="mobile.css" />
-        <link rel="stylesheet" href="tablet.css" />
+        <link rel="stylesheet" href="src/css/style.css" />
+        <link rel="stylesheet" href="src/css/mobile.css" />
+        <link rel="stylesheet" href="src/css/tablet.css" />
     </head>
 
     <body>
         <header>
             <nav>
-                <h2>Danny<span>S</span></h2>
+                <h2>&lt;Danny<span>S&gt;</span></h2>
                 <ul>
                     <h2 class="h1-nav">Menu</h2>
                     <li>
@@ -63,8 +63,7 @@
         </header>
 
         <section class="home" id="home">
-            <!-- 🔥 Tambahan background futuristik -->
-            <div>
+            <div class="container-home">
                 <div class="container-home-1 from-bottom">
                     <div class="border-h2-home">
                         <h2><span id="name-typing"></span></h2>
@@ -86,6 +85,7 @@
                                 >Download CV</a
                             >
                         </div>
+
                         <div class="icon-links">
                             <a href="https://facebook.com" target="_blank"
                                 ><i class="fab fa-facebook-f"></i
@@ -98,6 +98,10 @@
                             ></a>
                         </div>
                     </div>
+                </div>
+
+                <div class="container-home-2 from-bottom">
+                    <img src="src/assets/Saya.png" alt="Profile Image" />
                 </div>
             </div>
         </section>
@@ -156,7 +160,7 @@
                 <div class="from-bottom">
                     <div class="portfolio-item">
                         <div class="portfolio-img">
-                            <img src="Catalog.png" alt="Catalog Website" />
+                            <img src="src/assets/Catalog.png" alt="Catalog Website" />
                         </div>
                         <div class="portfolio-content">
                             <h3>Website Toko Online</h3>
@@ -202,7 +206,7 @@
                 <div style="transition-delay: 0.4s" class="from-bottom">
                     <div class="portfolio-item">
                         <div class="portfolio-img">
-                            <img src="Company.png" alt="Company Profile" />
+                            <img src="src/assets/Company.png" alt="Company Profile" />
                         </div>
                         <div class="portfolio-content">
                             <h3>Company Profile Website</h3>
@@ -239,7 +243,7 @@
                 </div>
 
                 <div
-                    style="transition-delay: 0.1s"
+                    style="transition-delay: 0.2s"
                     class="skill-box from-rotate"
                 >
                     <i class="fab fa-css3-alt"></i>
@@ -247,7 +251,7 @@
                 </div>
 
                 <div
-                    style="transition-delay: 0.2s"
+                    style="transition-delay: 0.4s"
                     class="skill-box from-rotate"
                 >
                     <i class="fab fa-js-square"></i>
@@ -255,41 +259,39 @@
                 </div>
 
                 <div
-                    style="transition-delay: 0.3s"
+                    style="transition-delay: 0.6s"
+                    class="skill-box from-rotate"
+                >
+                    <i class="fab fa-laravel"></i>
+
+                    <p>Laravel</p>
+                </div>
+
+                <!-- Baris 2 -->
+                <div
+                    style="transition-delay: 0.8s"
                     class="skill-box from-rotate"
                 >
                     <i class="fab fa-bootstrap"></i>
                     <p>Bootstrap</p>
                 </div>
-
-                <!-- Baris 2 -->
-                <div
-                    style="transition-delay: 0.4s"
-                    class="skill-box from-rotate"
-                >
-                    <i class="fab fa-react"></i>
-                    <p>React</p>
-                </div>
-                <div
-                    style="transition-delay: 0.5s"
-                    class="skill-box from-rotate"
-                >
+                <div style="transition-delay: 1s" class="skill-box from-rotate">
                     <i class="fab fa-css3"></i>
                     <p>Tailwind</p>
                 </div>
                 <div
-                    style="transition-delay: 0.6s"
+                    style="transition-delay: 1.2s"
                     class="skill-box from-rotate"
                 >
-                    <i class="fab fa-github"></i>
-                    <p>GitHub</p>
+                    <i class="fab fa-react"></i>
+                    <p>React JS</p>
                 </div>
                 <div
-                    style="transition-delay: 0.7s"
+                    style="transition-delay: 1.4s"
                     class="skill-box from-rotate"
                 >
-                    <i class="fas fa-laptop-code"></i>
-                    <p>Responsive Design</p>
+                    <i class="fab fa-php"></i>
+                    <p>PHP native</p>
                 </div>
             </div>
         </section>
@@ -391,13 +393,13 @@
             <div class="modal-content">
                 <span class="close-btn" id="closeModal">&times;</span>
                 <h2>Preview CV</h2>
-                <img src="MyCVGuys.png" alt="CV Preview" />
+                <img src="src/assets/MyCVGuys.png" alt="CV Preview" />
                 <a href="cv-download.pdf" download class="download-btn"
                     >Download CV</a
                 >
             </div>
         </div>
 
-        <script src="main.js"></script>
+        <script src="src/js/main.js"></script>
     </body>
 </html>

@@ -42,6 +42,18 @@ nav {
   padding: 1rem 2rem;
 }
 
+.title-main {
+  display: flex;
+  flex-direction: column;
+  gap: -10;
+}
+
+.title-main p {
+  color: gray;
+  font-size: 12px;
+  font-style: uppercase;
+}
+
 nav h2 {
   font-size: 1.5rem;
   color: #bb86fc;
@@ -130,6 +142,7 @@ nav ul li a:hover i {
 }
 
 .from-rotate {
+  opacity: 0;
   transform: perspective(800px) rotateY(-90deg);
   transition: transform 3s ease-in-out;
   transform-style: preserve-3d
@@ -137,7 +150,8 @@ nav ul li a:hover i {
 }
 
 .from-rotate.show {
-  transform: perspective(1000px) rotateY(0deg);
+  opacity: 1;
+  transform: perspective(800px) rotateY(0deg);
 }
 
 /* STYLING SECTION */
@@ -176,8 +190,8 @@ section {
 
 /* HALAMAN HOME */
 .home {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
   color: var(--bg);
@@ -206,82 +220,111 @@ section {
 }
 
 /* BAtas */
-.container-home-1 {
+.container-home {
   width: 100%;
-  min-height: 70vh;
+  max-width: 1200px;
+  /* Batasi lebar maksimal agar tidak terlalu lebar di monitor besar */
+  margin: 0 auto;
+  min-height: 100vh;
+  /* Agar tinggi memenuhi layar */
+  padding-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.container-home-1 {
+  flex: 1;
+  /* Mengambil ruang yang tersedia secara proporsional */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
 .border-h2-home {
-  height: 40%;
   display: flex;
-  justify-content: center;
-  align-items: end;
-  width: 100%;
+  margin-bottom: 5px;
 }
 
 #name-typing {
-  display: inline-block;
+  font-size: 2.5rem;
+  /* Ukuran desktop */
   font-weight: bold;
   color: #fff;
-  padding-right: 5px;
+}
+
+.umkm p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #ddd;
 }
 
 .btn-2-home {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
-.btn-CV {
+/* --- Tombol & Hover (Tetap Sesuai Desain Anda) --- */
+.btn-futuristic, .btn-CV {
   display: inline-block;
   padding: 12px 28px;
-  margin-top: 20px;
   border-radius: 2rem;
   text-decoration: none;
   font-weight: 600;
-  letter-spacing: 1px;
-  color: #fff;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(123, 47, 247, 0.6), 0 0 30px rgba(0, 198, 255, 0.4);
-}
-
-
-.btn-futuristic {
-  display: inline-block;
-  padding: 12px 28px;
-  margin-top: 20px;
-  border-radius: 2rem;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #fff;
-  background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-  box-shadow: 0 0 15px rgba(123, 47, 247, 0.6), 0 0 30px rgba(0, 198, 255, 0.4);
   transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
-.btn-futuristic:hover {
-  box-shadow: 0 0 20px rgba(0, 198, 255, 0.9), 0 0 40px rgba(255, 0, 204, 0.6);
-  background: transparent;
-  transform: scale(1.07);
-}
-
-.btn-CV:hover {
+.btn-futuristic {
   background: linear-gradient(90deg, #7b2ff7, #00c6ff);
-  box-shadow: 0 0 20px rgba(0, 198, 255, 0.9), 0 0 40px rgba(255, 0, 204, 0.6);
-  transform: scale(1.07);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(123, 47, 247, 0.6);
 }
+
+.btn-CV {
+  border: 1px solid #7b2ff7;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(123, 47, 247, 0.3);
+}
+
+.btn-futuristic:hover, .btn-CV:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.9);
+  background: linear-gradient(90deg, #00c6ff, #7b2ff7);
+}
+
+.container-home-2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.container-home-2 img {
+  max-width: 100%;
+  cursor: pointer;
+  height: auto;
+  /* Sangat penting agar gambar tidak gepeng */
+  max-height: 600px;
+  /* Sesuaikan agar tidak terlalu besar di desktop */
+  border-radius: 20px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease, transform 0.5s ease;
+  /* Tambah transisi agar halus */
+}
+
+.container-home-2 img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+  /* Sedikit zoom agar lebih hidup, opsional */
+}
+
 
 /* Modal */
 /* Saat modal aktif, body dikasih class no-scroll */
@@ -387,7 +430,7 @@ body.modal-open footer {
 .icon-links {
   display: flex;
   gap: 30px;
-  justify-content: center;
+  justify-content: start;
   margin-top: 30px;
 }
 
@@ -511,7 +554,7 @@ body.modal-open footer {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
-  align-items: stretch; 
+  align-items: stretch;
 }
 
 .portfolio-item {
@@ -554,6 +597,7 @@ body.modal-open footer {
 .portfolio-content h3 {
   font-size: 1.3rem;
   color: #bb86fc;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -591,23 +635,21 @@ body.modal-open footer {
   width: 100%;
   text-align: center;
   border-radius: 8px;
-  color: white;
-  background: #bb86fc;
+  color: #bb86fc;
+  background: transparent;
   font-weight: bold;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid #bb86fc;
 }
 
 .btn-portfolio:hover {
-  background: transparent;
-  border-color: #bb86fc;
-  color: #bb86fc;
+  color: white;
+  background: #bb86fc;
   box-shadow: 0 0 10px rgba(187, 134, 252, 0.4);
 }
 
 /* Hover Effect */
 .portfolio-item:hover {
-  transform: translateY(-10px);
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.8),
   0 5px 15px rgba(140, 0, 255, 0.8),
   0 5px 15px rgba(0, 200, 255, 0.6);
@@ -641,7 +683,7 @@ body.modal-open footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 1.5s ease;
+  transition: transform 1s ease-in;
   cubic-bezier(0.2, 0.8, 0.2, 1);
   backface-visibility: hidden;
   box-shadow: 0 0 10px rgba(140, 0, 255, 0.2);
@@ -668,7 +710,6 @@ body.modal-open footer {
 .skill-box:hover {
   border: 1px solid #bb86fc;
   box-shadow: 0 0 1px #bb86fc, 0 0 1px rgba(0, 200, 255, 0.6);
-  transform: translateY(-8px);
 }
 
 .skill-box:hover i {
