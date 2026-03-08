@@ -22,8 +22,8 @@
     left: -100%;
     width: 60%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.70);
+    backdrop-filter: blur(15px);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     padding-top: 60px;
@@ -53,6 +53,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    border-radius: 50px;
     background: #bb86fc;
     height: 4px;
   }
@@ -71,12 +72,7 @@
     text-align: center;
   }
   
-  .container-home-1 {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  
 
   .container-home-1, .container-home-2 {
     width: 100%;
@@ -128,12 +124,10 @@
   .portfolio-grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   .portfolio-item {
-    width: 390px;
+    width: 100%;
   }
 
   /* HALAMAN SKILLS */
@@ -143,6 +137,10 @@
 
   /* HALAMAN CONTACT */
   .contact-subtitle {
+    text-align: start;
+  }
+  
+  .contact-info p {
     text-align: start;
   }
 

@@ -20,7 +20,7 @@ function ketikLoop() {
         index--;
         target.textContent = textMain.substring(0, index);
 
-        if (index === 0) {
+        if (index === 2) {
             isDeleting = false;
         }
     }
@@ -32,10 +32,20 @@ ketikLoop();
 
 /* TOMBOL NAVBAR MOBILE */
 const tombolBaik = document.querySelector("nav ul");
+const hamburger = document.querySelector(".hamburger"); // sesuaikan selectornya
 
 function toggleMenu() {
     tombolBaik.classList.toggle("active");
 }
+
+document.addEventListener("click", function (event) {
+    if (
+        !tombolBaik.contains(event.target) &&
+        !hamburger.contains(event.target)
+    ) {
+        tombolBaik.classList.remove("active");
+    }
+});
 
 /* ANIMASI BOTTOM */
 const elements = document.querySelectorAll(".from-bottom, .from-rotate");
@@ -85,38 +95,57 @@ window.addEventListener("click", e => {
 const form = document.getElementById("FormPage");
 
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Ambil data dari input
-  const nama = document.getElementById("NamaId").value.trim();
-  const email = document.getElementById("EmailId").value.trim();
-  const alamat = document.getElementById("AlamatId").value.trim();
-  const subjek = document.getElementById("SubjekId").value.trim();
-  const pesan = document.getElementById("PesanId").value.trim();
-  const noAku = '6285645837298'; // Nomor tujuan
+    // Ambil data dari input
+    const nama = document.getElementById("NamaId").value.trim();
+    const email = document.getElementById("EmailId").value.trim();
+    const alamat = document.getElementById("AlamatId").value.trim();
+    const subjek = document.getElementById("SubjekId").value.trim();
+    const pesan = document.getElementById("PesanId").value.trim();
+    const noAku = "6285645837298"; // Nomor tujuan
 
-  // Validasi: Kalau ada yang kosong, ngamuk
-  if (nama === "" || email === "" || alamat === "" || subjek === "" || pesan === "") {
-    alert('Semua input harus diisi, cok!');
-    return;
-  }
+    // Validasi: Kalau ada yang kosong, ngamuk
+    if (
+        nama === "" ||
+        email === "" ||
+        alamat === "" ||
+        subjek === "" ||
+        pesan === ""
+    ) {
+        alert("Semua input harus diisi!");
+        return;
+    }
 
-  // LOGIKA UTAMA: Susun pesan buat dikirim ke WA
-  // %0A itu kodenya biar pesannya bisa "Enter" atau ganti baris di WA
-  const pesanWa = "Halo Dannys Martha Favrillia, saya ingin mengobrol dengan anda:" + "%0A%0A" +
-                  "*Nama:* " + nama + "%0A" +
-                  "*Email:* " + email + "%0A" +
-                  "*Alamat:* " + alamat + "%0A" +
-                  "*Subjek:* " + subjek + "%0A%0A" +
-                  "*Pesan:* " + "%0A" + pesan;
+    // LOGIKA UTAMA: Susun pesan buat dikirim ke WA
+    // %0A itu kodenya biar pesannya bisa "Enter" atau ganti baris di WA
+    const pesanWa =
+        "Halo Dannys Martha Favrillia, saya ingin mengobrol dengan anda:" +
+        "%0A%0A" +
+        "*Nama:* " +
+        nama +
+        "%0A" +
+        "*Email:* " +
+        email +
+        "%0A" +
+        "*Alamat:* " +
+        alamat +
+        "%0A" +
+        "*Subjek:* " +
+        subjek +
+        "%0A%0A" +
+        "*Pesan:* " +
+        "%0A" +
+        pesan;
 
-  // Gabungkan nomor WA dan teks pesan ke dalam satu link
-  const urlWa = "https://api.whatsapp.com/send?phone=" + noAku + "&text=" + pesanWa;
+    // Gabungkan nomor WA dan teks pesan ke dalam satu link
+    const urlWa =
+        "https://api.whatsapp.com/send?phone=" + noAku + "&text=" + pesanWa;
 
-  // Langsung buka WhatsApp di tab baru
-  window.open(urlWa, '_blank');
-  
-  alert('Berhasil...');
+    // Langsung buka WhatsApp di tab baru
+    window.open(urlWa, "_blank");
+
+    alert("Berhasil...");
 });
 
 // Animation number in colom about h1

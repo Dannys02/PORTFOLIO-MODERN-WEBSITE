@@ -97,7 +97,7 @@ nav ul li a i {
   width: 0;
   height: 3px;
   border-radius: 20px;
-  background: #1e6fbe;
+  background: #bb86fc;
   transform-origin: left;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
@@ -117,7 +117,7 @@ nav ul li a i {
 }
 
 nav ul li a:hover {
-  color: var(--primary);
+  color: #bb86fc;
 }
 
 nav ul li a:hover i {
@@ -225,7 +225,7 @@ section {
   max-width: 1200px;
   /* Batasi lebar maksimal agar tidak terlalu lebar di monitor besar */
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100vh !important;
   /* Agar tinggi memenuhi layar */
   padding-inline: 20px;
   display: flex;
@@ -235,6 +235,7 @@ section {
 }
 
 .container-home-1 {
+  padding-top: 180px;
   flex: 1;
   /* Mengambil ruang yang tersedia secara proporsional */
   display: flex;
@@ -308,6 +309,8 @@ section {
 .container-home-2 img {
   max-width: 100%;
   cursor: pointer;
+  border: 1px solid rgba(140, 0, 255, 0.5);
+  box-shadow: 0 0 15px rgba(140, 0, 255, 0.3);
   height: auto;
   /* Sangat penting agar gambar tidak gepeng */
   max-height: 600px;
@@ -315,14 +318,15 @@ section {
   border-radius: 20px;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: filter 0.5s ease, transform 0.5s ease;
+  transition: filter 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
   /* Tambah transisi agar halus */
 }
 
 .container-home-2 img:hover {
   filter: grayscale(0%);
-  transform: scale(1.02);
-  /* Sedikit zoom agar lebih hidup, opsional */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8),
+  0 0 15px rgba(140, 0, 255, 0.8),
+  0 0 15px rgba(0, 200, 255, 0.6);
 }
 
 
@@ -345,8 +349,8 @@ body.modal-open footer {
 .modal {
   display: none;
   position: fixed;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
   top: 50%;
   left: 50%;
   border-radius: 20px;
@@ -374,7 +378,7 @@ body.modal-open footer {
   outline: 1px solid rgba(140, 0, 255, 0.5);
   border-radius: 20px;
   text-align: center;
-  width: 50%;
+  width: 20%;
   position: relative;
 }
 
@@ -405,26 +409,11 @@ body.modal-open footer {
   position: relative;
   overflow: hidden;
   font-weight: bold;
+  transition: background 0.5s ease;
 }
 
-.download-btn::after {
-  content: '';
-  position: absolute;
-  width: 120% !important;
-  height: 400% !important;
-  transform: rotate(60deg);
-  border-radius: 20px;
-  top: 0;
-  left: -70%;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  z-index: -1;
-  transition: all 0.6s ease;
-}
-
-.download-btn:hover::after {
-  left: -10%;
-  top: -100%;
-  transform: rotate(0);
+.download-btn:hover {
+  background: #bb86fc;
 }
 
 .icon-links {
@@ -667,7 +656,7 @@ body.modal-open footer {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
   justify-items: center;
   padding-inline: 30px;
@@ -747,6 +736,10 @@ body.modal-open footer {
 
 .contact-info p {
   margin: 8px 0;
+}
+
+.contact-info a {
+  color: #cfd8ff;
 }
 
 .contact-info i {
