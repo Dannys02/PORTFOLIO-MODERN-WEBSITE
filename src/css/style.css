@@ -974,8 +974,6 @@ body.modal-open footer {
     text-align: center;
   }
 
-
-
   .container-home-1, .container-home-2 {
     width: 100%;
   }
@@ -1038,7 +1036,7 @@ body.modal-open footer {
 
   /* HALAMAN SKILLS */
   .skills-grid {
-    grid-template-columns: repeat(1, max-content);
+    grid-template-columns: repeat(1, max-content) !important;
   }
 
   /* HALAMAN CONTACT */
