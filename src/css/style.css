@@ -672,7 +672,7 @@ body.modal-open footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease-in;
+  transition: transform 1s ease-in;
   cubic-bezier(0.2, 0.8, 0.2, 1);
   backface-visibility: hidden;
   box-shadow: 0 0 10px rgba(140, 0, 255, 0.2);
