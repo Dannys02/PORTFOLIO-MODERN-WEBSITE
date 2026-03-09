@@ -117,7 +117,7 @@
   }
 
   .about-div-two {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   /* HALAMAN PORTFOLIO RESPONSIF */
