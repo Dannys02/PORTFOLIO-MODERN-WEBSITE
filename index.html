@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dannys Martha | Web Developer</title>
+        <link rel="icon" type="image/png" href="src/assets/Logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" href="style.min.css" />
@@ -101,7 +102,7 @@
                 </div>
 
                 <div class="container-home-2 from-bottom">
-                    <img src="src/assets/Saya.png" alt="Profile Image" />
+                    <img loading="lazy" src="src/assets/Saya.png" alt="Profile Image" />
                 </div>
             </div>
         </section>
@@ -207,12 +208,21 @@
                                 <span>Tailwind</span>
                                 <span>JavaScript</span>
                             </div>
-                            <a
-                                class="btn-portfolio"
-                                href="https://github.com/Dannys02/WEB-JUALAN-UMKM.git"
-                            >
-                                Link Github <i class="fab fa-github"></i>
-                            </a>
+                            <div style="display: flex; gap: 5px">
+                                <a
+                                    class="btn-portfolio"
+                                    href="https://github.com/Dannys02/WEB-JUALAN-UMKM.git"
+                                >
+                                    Link Github <i class="fab fa-github"></i>
+                                </a>
+                                <a
+                                    class="btn-portfolio"
+                                    href="http://toko-online.infinityfree.me/store"
+                                >
+                                    Link Website
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -228,7 +238,7 @@
                         </div>
                         <div class="portfolio-content">
                             <h3>Website Kasir</h3>
-                            <p>Sistem kasir sederhana berbasis website.</p>
+                            <p>Sistem kasir sederhana berbasis website dan peforma cepat.</p>
                             <div class="tags">
                                 <span>React JS</span>
                                 <span>Tailwind</span>
@@ -294,12 +304,21 @@
                                 <span>Tailwind</span>
                                 <span>JavaScript</span>
                             </div>
-                            <a
-                                class="btn-portfolio"
-                                href="https://github.com/Dannys02/Banyuwangi-Catering-Web.git"
-                            >
-                                Link Github <i class="fab fa-github"></i>
-                            </a>
+                            <div style="display: flex; gap: 5px">
+                                <a
+                                    class="btn-portfolio"
+                                    href="https://github.com/Dannys02/Banyuwangi-Catering-Web.git"
+                                >
+                                    Link Github <i class="fab fa-github"></i>
+                                </a>
+                                <a
+                                    class="btn-portfolio"
+                                    href="https://banyuwangi-catering.vercel.app"
+                                >
+                                    Link Website
+                                    <i class="fa-solid fa-globe"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -340,6 +359,7 @@
             <div class="div-section-title from-bottom">
                 <h2 class="section-title">Skills</h2>
             </div>
+            
             <div class="skills-grid">
                 <!-- Baris 1 -->
                 <div class="skill-box from-rotate">
@@ -503,7 +523,7 @@
             <div class="modal-content">
                 <span class="close-btn" id="closeModal">&times;</span>
                 <h2>Preview CV</h2>
-                <img src="src/assets/MyCVGuys.png" alt="CV Preview" />
+                <img loading="lazy" src="src/assets/MyCVGuys.png" alt="CV Preview" />
                 <a href="cv-download.pdf" download class="download-btn"
                     >Download CV</a
                 >
