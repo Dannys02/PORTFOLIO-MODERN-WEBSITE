@@ -1,573 +1,989 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dannys Martha | Web Developer</title>
-        <link rel="icon" type="image/webp" href="src/assets/Logo.webp" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
+        <!-- Primary Meta Tags -->
+        <meta
+            name="description"
+            content="Dannys Martha Favrillia — Web Developer specializing in clean, responsive websites for small businesses and local brands. Available for freelance projects."
         />
-        <noscript>
-            <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-            />
-        </noscript>
-        <link rel="stylesheet" href="src/css/style.css" />
+        <meta
+            name="keywords"
+            content="Dannys, Dannys Martha, Dannys Favrillia, Martha Favrillia, Dannys Martha Favrillia, web developer, freelance web developer, website UMKM, jasa website"
+        />
+        <meta name="author" content="Dannys Martha Favrillia" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph (WhatsApp, Facebook, LinkedIn preview) -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dannys-martha.vercel.app/" />
+        <meta property="og:title" content="Dannys Martha | Web Developer" />
+        <meta
+            property="og:description"
+            content="Dannys Martha Favrillia — Web Developer specializing in clean, responsive websites for small businesses and local brands."
+        />
+        <meta
+            property="og:image"
+            content="https://dannys-martha.vercel.app/src/assets/Saya.webp"
+        />
+
+        <!-- Twitter/X Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dannys Martha | Web Developer" />
+        <meta
+            name="twitter:description"
+            content="Dannys Martha Favrillia — Web Developer specializing in clean, responsive websites for small businesses and local brands."
+        />
+        <meta
+            name="twitter:image"
+            content="https://dannys-martha.vercel.app/src/assets/Saya.webp"
+        />
+
+        <!-- Canonical -->
+        <link rel="canonical" href="https://dannys-martha.vercel.app/" />
+        <title>Dannys Martha | Web Developer</title>
+
+        <link rel="icon" type="image/webp" href="src/assets/Logo.webp" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-            media="print"
-            onload="this.media='all'"
         />
-        <noscript>
-            <link
-                rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-            />
-        </noscript>
-    </head>
 
-    <body>
-        <header>
-            <nav>
-                <h2>&lt;Danny<span>S&gt;</span></h2>
-                <ul>
-                    <h2 class="h1-nav">Menu</h2>
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#bb86fc",
+                            secondary: "#03dac6",
+                            darkBg: "#050010",
+                            glass: "rgba(255, 255, 255, 0.05)"
+                        },
+                        backgroundImage: {
+                            "cosmic-gradient":
+                                "radial-gradient(circle at 50% 100%, #0d0221, #050010 80%)"
+                        }
+                    }
+                }
+            };
+        </script>
+
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+                background: #050010;
+                color: #fff;
+                overflow-x: hidden;
+            }
+
+            .glass-card {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(187, 134, 252, 0.2);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+
+            .glass-card:hover {
+                border-color: #bb86fc;
+                box-shadow: 0 0 25px rgba(187, 134, 252, 0.3);
+                transform: translateY(-10px);
+            }
+
+            .glow-text {
+                text-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+            }
+
+            .nav-link {
+                position: relative;
+                transition: color 0.3s;
+            }
+
+            .nav-link::after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -4px;
+                left: 0;
+                background: #bb86fc;
+                transition: width 0.3s;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #050010;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #1e0038;
+                border-radius: 10px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #bb86fc;
+            }
+
+            #name-typing::after {
+                content: "|";
+                animation: blink 0.7s infinite;
+            }
+
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-cosmic-gradient">
+        <header
+            class="fixed top-0 w-full z-50 bg-darkBg/60 backdrop-blur-lg border-b border-white/10"
+        >
+            <nav
+                class="container mx-auto px-6 py-4 flex justify-between items-center"
+            >
+                <h2 class="text-2xl font-bold text-primary tracking-wider">
+                    &lt;Danny<span class="text-white">S&gt;</span>
+                </h2>
+
+                <ul id="navMenu" class="hidden md:flex space-x-8 font-medium">
                     <li>
-                        <a class="a-main-nav" href="#home"
-                            ><i class="fas fa-house"></i> Home</a
+                        <a href="#home" class="nav-link hover:text-primary"
+                            >Home</a
                         >
                     </li>
                     <li>
-                        <a class="a-main-nav" href="#about"
-                            ><i class="fas fa-user"></i> About</a
+                        <a href="#about" class="nav-link hover:text-primary"
+                            >About</a
                         >
                     </li>
                     <li>
-                        <a class="a-main-nav" href="#portfolio"
-                            ><i class="fas fa-briefcase"></i> Portfolio</a
+                        <a href="#portfolio" class="nav-link hover:text-primary"
+                            >Portfolio</a
                         >
                     </li>
                     <li>
-                        <a class="a-main-nav" href="#skills"
-                            ><i class="fas fa-lightbulb"></i> Skills</a
+                        <a href="#skills" class="nav-link hover:text-primary"
+                            >Skills</a
                         >
                     </li>
                     <li>
-                        <a class="a-main-nav" href="#contact"
-                            ><i class="fas fa-envelope"></i> Contact</a
+                        <a href="#contact" class="nav-link hover:text-primary"
+                            >Contact</a
                         >
                     </li>
                 </ul>
-                <div class="hamburger" id="btn-navbar" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
+                <button class="md:hidden text-2xl" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
+
+            <div
+                id="mobileMenu"
+                class="hidden md:hidden bg-darkBg border-b border-white/10 flex flex-col p-6 space-y-4"
+            >
+                <a href="#home" onclick="toggleMenu()">Home</a>
+                <a href="#about" onclick="toggleMenu()">About</a>
+                <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+                <a href="#skills" onclick="toggleMenu()">Skills</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+            </div>
         </header>
 
-        <section class="home" id="home">
-            <div class="container-home">
-                <div class="container-home-1 from-bottom">
-                    <div class="border-h2-home">
-                        <h2><span id="name-typing"></span></h2>
+        <section id="home" class="min-h-screen flex items-center pt-20 px-6">
+            <div
+                class="container mx-auto pt-5 grid md:grid-cols-2 gap-12 items-center"
+            >
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4">
+                        Hi, I'm <br />
+                        <span
+                            id="name-typing"
+                            class="text-primary glow-text"
+                        ></span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 max-w-lg">
+                        I help small businesses and local brands build simple,
+                        professional websites — so your customers can find you,
+                        trust you, and reach you easily via WhatsApp.
+                    </p>
+                    <div class="flex items-center text-sm gap-4">
+                        <a
+                            href="#portfolio"
+                            class="px-8 py-3 bg-primary text-white font-bold rounded-full hover:shadow-[0_0_20px_rgba(187,134,252,0.6)] transition duration-300"
+                            >View My Work</a
+                        >
+                        <button
+                            id="modal-CV"
+                            class="px-8 py-3 border border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition duration-300"
+                        >
+                            Download CV
+                        </button>
                     </div>
-                    <div class="border-p-home">
-                        <div class="umkm">
-                            <p>
-                                Membuat website sederhana untuk UMKM yang bikin
-                                usaha terlihat profesional dan pelanggan mudah
-                                order lewat WhatsApp
-                            </p>
-                        </div>
-
-                        <div class="btn-2-home">
-                            <a href="#portfolio" class="btn-futuristic"
-                                >Lihat Portfolio</a
-                            >
-                            <a href="#" id="modal-CV" class="btn-CV"
-                                >Download CV</a
-                            >
-                        </div>
-
-                        <div class="icon-links">
-                            <a
-                                href="https://www.facebook.com/awamg.mon"
-                                target="_blank"
-                                ><i class="fab fa-facebook-f"></i
-                            ></a>
-                            <a
-                                href="https://www.instagram.com/pixvero.webdev?igsh=a3R4ZXZlYnc2M203"
-                                target="_blank"
-                                ><i class="fab fa-instagram"></i
-                            ></a>
-                            <a
-                                href="https://github.com/Dannys02"
-                                target="_blank"
-                                ><i class="fab fa-github"></i
-                            ></a>
-                        </div>
+                    <div
+                        class="flex items-center justify-center gap-6 mt-8 text-2xl"
+                    >
+                        <a
+                            href="https://github.com/Dannys02"
+                            target="_blank"
+                            class="hover:text-primary transition"
+                            ><i class="fab fa-github"></i
+                        ></a>
+                        <a
+                            href="https://www.instagram.com/pixvero.webdev"
+                            target="_blank"
+                            class="hover:text-primary transition"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                        <a
+                            href="https://www.facebook.com/awamg.mon"
+                            target="_blank"
+                            class="hover:text-primary transition"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+                        <a
+                            href="https://www.linkedin.com/in/dannys-favrillia-3792013a5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            target="_blank"
+                            class="hover:text-primary transition"
+                            ><i class="fab fa-linkedin"></i
+                        ></a>
                     </div>
                 </div>
-
-                <div class="container-home-2 from-bottom">
+                <div class="relative flex justify-center" data-aos="zoom-in">
+                    <div
+                        class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full"
+                    ></div>
                     <img
-                        loading="lazy"
                         src="src/assets/Saya.webp"
-                        width="400"
-                        height="400"
-                        alt="Profile Image"
+                        alt="Dannys Martha"
+                        class="relative z-10 w-80 h-80 md:w-[450px] md:h-[450px] object-cover rounded-3xl border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
                     />
                 </div>
             </div>
         </section>
 
-        <section class="about" id="about">
-            <div class="div-section-title from-bottom">
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-div-one">
-                <p class="from-bottom">
-                    Saya membantu UMKM dan bisnis kecil memiliki website yang
-                    rapi, mudah digunakan, dan bisa dipakai untuk memperkenalkan
-                    usaha serta produk secara online.
-                </p>
-
-                <p class="from-bottom">
-                    Fokus saya adalah membuat tampilan website yang jelas,
-                    responsif di berbagai perangkat, dan memudahkan pengunjung
-                    untuk menghubungi pemilik usaha.
-                </p>
-                <p class="from-bottom">
-                    Saya mengutamakan komunikasi yang jelas, pengerjaan yang
-                    terarah, dan hasil website yang benar-benar bisa digunakan
-                    dalam jangka panjang.
-                </p>
-            </div>
-
-            <div class="about-div-two">
-                <div class="from-bottom">
-                    <div class="colom-about">
-                        <h2 id="numberAnimation" data-target="1">0</h2>
-                        <p>Experience years</p>
-                    </div>
-                </div>
-                <div class="from-bottom">
-                    <div class="colom-about">
-                        <h2 id="numberAnimation" data-target="10">0</h2>
-                        <p>Project Completed</p>
-                    </div>
-                </div>
-                <div class="from-bottom">
-                    <div class="colom-about">
-                        <h2 id="numberAnimation" data-target="10">0</h2>
-                        <p>Happy Clients</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio" id="portfolio">
-            <div class="div-section-title">
-                <h2 class="section-title from-bottom">Portfolio</h2>
-            </div>
-            <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                loading="lazy"
-                                src="src/assets/Barbeshop.webp"
-                                width="400"
-                                height="400"
-                                alt="Website Barbeshop"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Website Barbershop</h3>
-                            <p>
-                                sistem manajemen barbershop dengan booking
-                                online.
-                            </p>
-                            <div class="tags">
-                                <span>PHP</span>
-                                <span>Tailwind</span>
-                                <span>JavaScript</span>
-                                <span>Laravel</span>
-                            </div>
-                            <div style="display: flex; gap: 5px">
-                                <a
-                                    class="btn-portfolio"
-                                    href="https://github.com/Dannys02/Dannys02/BARBESHOP-SYSTEM.git"
-                                >
-                                    Link Github <i class="fab fa-github"></i>
-                                </a>
-                                <a
-                                    class="btn-portfolio"
-                                    href="https://barbeshop-system-main-plpzea.free.laravel.cloud"
-                                >
-                                    Link Website <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 2 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                loading="lazy"
-                                src="src/assets/Restoran.webp"
-                                width="400"
-                                height="400"
-                                alt="Website Restoran Sederhana"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Website Restoran Sederhana</h3>
-                            <p>
-                                Website dengan landing page lengkap dan sistem
-                                pesanan.
-                            </p>
-                            <div class="tags">
-                                <span>PHP</span>
-                                <span>Tailwind</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div style="display: flex; gap: 5px">
-                                <a
-                                    class="btn-portfolio"
-                                    href="https://github.com/Dannys02/Dannys02/WEB-JUALAN-UMKM.git"
-                                >
-                                    Link Github <i class="fab fa-github"></i>
-                                </a>
-                                <a
-                                    class="btn-portfolio"
-                                    href="http://toko-online.infinityfree.me/store"
-                                >
-                                    Link Website
-                                    <i class="fa-solid fa-globe"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                loading="lazy"
-                                src="src/assets/Kasir.webp"
-                                width="400"
-                                height="400"
-                                alt="Website Kasir"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Website Kasir</h3>
-                            <p>
-                                Sistem kasir sederhana berbasis website dan
-                                peforma cepat.
-                            </p>
-                            <div class="tags">
-                                <span>React JS</span>
-                                <span>Tailwind</span>
-                                <span>Laravel</span>
-                            </div>
-                            <a
-                                class="btn-portfolio"
-                                href="https://github.com/Dannys02/Dannys02/kasir-umkm-sederhana.git"
-                            >
-                                Link Github <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                loading="lazy"
-                                src="src/assets/Katalog.webp"
-                                width="400"
-                                height="400"
-                                alt="Katalog Digital Produk"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Katalog Digital Produk</h3>
-                            <p>
-                                Website dengan desain futuristik dan pencarian
-                                produk cepat.
-                            </p>
-                            <div class="tags">
-                                <span>React JS</span>
-                                <span>Tailwind</span>
-                                <span>Laravel</span>
-                            </div>
-                            <a
-                                class="btn-portfolio"
-                                href="https://github.com/Dannys02/Dannys02/KATALOG_DIGITAL_WEBSITE.git"
-                            >
-                                Link Github <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 5 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                loading="lazy"
-                                src="src/assets/CateringBanyuwangi.webp"
-                                width="400"
-                                height="400"
-                                alt="Website Catering"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Website Catering</h3>
-                            <p>
-                                Satu halaman website profil catering dengan CTA
-                                api WhatSapp.
-                            </p>
-                            <div class="tags">
-                                <span>HTML</span>
-                                <span>Tailwind</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <div style="display: flex; gap: 5px">
-                                <a
-                                    class="btn-portfolio"
-                                    href="https://github.com/Dannys02/Dannys02/Banyuwangi-Catering-Web.git"
-                                >
-                                    Link Github <i class="fab fa-github"></i>
-                                </a>
-                                <a
-                                    class="btn-portfolio"
-                                    href="https://banyuwangi-catering.vercel.app"
-                                >
-                                    Link Website
-                                    <i class="fa-solid fa-globe"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 6 -->
-                <div class="from-bottom">
-                    <div class="portfolio-item">
-                        <div class="portfolio-img">
-                            <img
-                                loading="lazy"
-                                src="src/assets/SSB.webp"
-                                width="400"
-                                height="400"
-                                alt="Website Sekolah Sepak Bola"
-                            />
-                        </div>
-                        <div class="portfolio-content">
-                            <h3>Website Sekolah Sepak Bola</h3>
-                            <p>
-                                Manajemen akademi sepak bola dengan sistem
-                                kursus & keuangan.
-                            </p>
-                            <div class="tags">
-                                <span>React JS</span>
-                                <span>Tailwind</span>
-                                <span>Laravel</span>
-                            </div>
-                            <a
-                                class="btn-portfolio"
-                                href="https://github.com/Dannys02/Dannys02/Kolab.git"
-                            >
-                                Link Github <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills" id="skills">
-            <div class="div-section-title from-bottom">
-                <h2 class="section-title">Skills</h2>
-            </div>
-
-            <div class="skills-grid">
-                <!-- Baris 1 -->
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-html5"></i>
-                    <p>HTML</p>
-                </div>
-
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-css3-alt"></i>
-                    <p>CSS</p>
-                </div>
-
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-js-square"></i>
-                    <p>JavaScript</p>
-                </div>
-
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-php"></i>
-
-                    <p>PHP</p>
-                </div>
-
-                <!-- Baris 2 -->
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-bootstrap"></i>
-                    <p>Bootstrap</p>
-                </div>
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-css3"></i>
-                    <p>Tailwind</p>
-                </div>
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-react"></i>
-                    <p>React JS</p>
-                </div>
-                <div class="skill-box from-rotate">
-                    <i class="fab fa-laravel"></i>
-                    <p>Laravel</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="div-section-title from-bottom">
-                <h2 class="section-title">Contact Me</h2>
-            </div>
-            <p class="contact-subtitle from-bottom">
-                Tertarik untuk bekerja sama atau sekadar ngobrol? Hubungi saya
-                sekarang!
-            </p>
-
-            <div class="contact-info">
-                <p class="from-bottom">
-                    <i class="fas fa-phone-alt"></i> +62 856-4583-7298 /
-                    <a
-                        href="https://wa.me/6285645837298?text=Halo%20kak%2C%20saya%20tertarik%20dengan%20jasa%20website%20kamu%20%F0%9F%99%8F"
-                        target="_blank"
-                        >Hubungi via Whatsapp</a
+        <section id="about" class="py-24 bg-black/20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2
+                        class="text-4xl font-bold inline-block border-b-4 border-primary pb-2"
                     >
-                </p>
-                <p class="from-bottom">
-                    <i class="fas fa-envelope"></i> webdannys@gmail.com
-                </p>
+                        About Me
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-gray-300 text-lg">
+                        <p data-aos="fade-up">
+                            Hi, I'm Dannys — a web developer focused on building
+                            clean, responsive websites for small businesses and
+                            growing brands.
+                        </p>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                            I specialize in creating websites that are easy to
+                            navigate, look great on any device, and make it
+                            simple for customers to contact or order from a
+                            business.
+                        </p>
+                        <p data-aos="fade-up" data-aos-delay="200">
+                            I value clear communication, structured workflows,
+                            and delivering results that are actually useful —
+                            not just visually nice.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4" data-aos="fade-up">
+                        <div class="glass-card p-4 rounded-2xl text-center">
+                            <h3
+                                class="text-3xl font-bold text-primary mb-2 counter"
+                                data-target="1"
+                            >
+                                0
+                            </h3>
+                            <p
+                                class="text-xs uppercase tracking-widest text-gray-400"
+                            >
+                                Experience year
+                            </p>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl text-center">
+                            <h3
+                                class="text-3xl font-bold text-primary mb-2 counter"
+                                data-target="69"
+                            >
+                                0
+                            </h3>
+                            <p
+                                class="text-xs uppercase tracking-widest text-gray-400"
+                            >
+                                Project Completed
+                            </p>
+                        </div>
+                        <div class="glass-card p-4 rounded-2xl text-center">
+                            <h3
+                                class="text-3xl font-bold text-primary mb-2 counter"
+                                data-target="38"
+                            >
+                                0
+                            </h3>
+                            <p
+                                class="text-xs uppercase tracking-widest text-gray-400"
+                            >
+                                Happy Client
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <form id="FormPage" class="contact-form from-bottom">
-                <input type="text" id="NamaId" placeholder="Nama Anda" />
-                <input type="email" id="EmailId" placeholder="Email Anda" />
-                <input type="text" id="AlamatId" placeholder="Alamat Anda" />
-                <input type="text" id="SubjekId" placeholder="Subjek" />
-                <textarea
-                    rows="5"
-                    id="PesanId"
-                    placeholder="Pesan Anda"
-                ></textarea>
-                <button type="submit">Kirim Pesan</button>
-            </form>
         </section>
 
-        <footer class="footer">
-            <div class="footer-container">
-                <!-- Brand Section -->
-                <div class="footer-brand">
-                    <h3 class="from-bottom">Dannys Martha Favrillia</h3>
-                    <div class="footer-underline from-bottom"></div>
-                    <p class="from-bottom">
-                        Membuat website sederhana untuk UMKM yang bikin usaha
-                        terlihat profesional dan pelanggan mudah order lewat
-                        WhatsApp
+        <section id="portfolio" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2
+                        class="text-4xl font-bold inline-block border-b-4 border-primary pb-2"
+                    >
+                        My Portfolio
+                    </h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="glass-card rounded-2xl overflow-hidden group"
+                        data-aos="fade-up"
+                    >
+                        <div class="h-48 overflow-hidden">
+                            <img
+                                src="src/assets/Barbeshop.webp"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Barbershop Website"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                Barbershop Website
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Online booking system with modern design.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >Laravel</span
+                                >
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >Tailwind</span
+                                >
+                            </div>
+                            <div class="flex gap-4">
+                                <a
+                                    href="https://github.com/Dannys02/BARBESHOP-BOOKING-SYSTEM"
+                                    class="text-primary hover:underline font-medium"
+                                    >Github <i class="fab fa-github ml-1"></i
+                                ></a>
+                                <a
+                                    href="https://barbeshop-system-main-plpzea.free.laravel.cloud"
+                                    class="text-primary hover:underline font-medium"
+                                    >Live <i class="fas fa-globe ml-1"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card rounded-2xl overflow-hidden group"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div class="h-48 overflow-hidden">
+                            <img
+                                src="src/assets/Restoran.webp"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Restaurant Website"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                Restaurant Website
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Interactive landing page and menu management for
+                                food sales.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >PHP</span
+                                >
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >Tailwind</span
+                                >
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >JS</span
+                                >
+                            </div>
+                            <div class="flex gap-4">
+                                <a
+                                    href="https://github.com/Dannys02/WEBSITE-RESTORAN-SEDERHANA"
+                                    class="text-primary hover:underline font-medium"
+                                    >Github <i class="fab fa-github ml-1"></i
+                                ></a>
+                                <a
+                                    href="https://toko-online.infinityfree.me/store"
+                                    class="text-primary hover:underline font-medium"
+                                    >Live <i class="fas fa-globe ml-1"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card rounded-2xl overflow-hidden group"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div class="h-48 overflow-hidden">
+                            <img
+                                src="src/assets/Kasir.webp"
+                                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                alt="Cashier Website"
+                            />
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">
+                                Cashier Website System
+                            </h3>
+                            <p class="text-gray-400 text-sm mb-4">
+                                Lightweight web-based cashier system built with
+                                React JS.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >React</span
+                                >
+                                <span
+                                    class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                                    >Laravel</span
+                                >
+                            </div>
+                            <div class="flex gap-4">
+                                <a
+                                    href="https://github.com/Dannys02/WEBSITE-KASIR-SEDERHANA"
+                                    class="text-primary hover:underline font-medium"
+                                    >Github <i class="fab fa-github ml-1"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 bg-black/20">
+            <div class="container mx-auto px-6 text-center">
+                <h2
+                    class="text-4xl font-bold mb-16 inline-block border-b-4 border-primary pb-2"
+                    data-aos="fade-up"
+                >
+                    Tech Stack
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                    >
+                        <i
+                            class="fab fa-html5 text-5xl text-orange-500 mb-4"
+                        ></i>
+                        <p class="font-bold">HTML5</p>
+                        <p class="font-bold text-primary text-xs">Advanced</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="100"
+                    >
+                        <i
+                            class="fab fa-css3-alt text-5xl text-blue-500 mb-4"
+                        ></i>
+                        <p class="font-bold">CSS3</p>
+                        <p class="font-bold text-primary text-xs">Advanced</p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="200"
+                    >
+                        <i class="fab fa-js text-5xl text-yellow-400 mb-4"></i>
+                        <p class="font-bold">JavaScript</p>
+                        <p class="font-bold text-primary text-xs">
+                            Intermediate
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="300"
+                    >
+                        <i
+                            class="fab fa-laravel text-5xl text-red-500 mb-4"
+                        ></i>
+                        <p class="font-bold">Laravel</p>
+                        <p class="font-bold text-primary text-xs">
+                            Intermediate
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="400"
+                    >
+                        <i class="fab fa-react text-5xl text-cyan-400 mb-4"></i>
+                        <p class="font-bold">React JS</p>
+                        <p class="font-bold text-primary text-xs">
+                            Intermediate
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="500"
+                    >
+                        <i class="fab fa-php text-5xl text-indigo-400 mb-4"></i>
+                        <p class="font-bold">PHP</p>
+                        <p class="font-bold text-primary text-xs">
+                            Intermediate
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="600"
+                    >
+                        <i class="fas fa-code text-5xl text-secondary mb-4"></i>
+                        <p class="font-bold">Tailwind</p>
+                        <p class="font-bold text-primary text-xs">
+                            Intermediate
+                        </p>
+                    </div>
+                    <div
+                        class="glass-card p-8 rounded-2xl"
+                        data-aos="flip-left"
+                        data-aos-delay="700"
+                    >
+                        <i
+                            class="fab fa-bootstrap text-5xl text-purple-600 mb-4"
+                        ></i>
+                        <p class="font-bold">Bootstrap</p>
+                        <p class="font-bold text-primary text-xs">
+                            Intermediate
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonial" class="py-24 bg-black/10">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2
+                        class="text-4xl font-bold inline-block border-b-4 border-primary pb-2 text-white"
+                    >
+                        Client Testimonials
+                    </h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Don't just take my word for it. Here’s what business
+                        owners have to say about working with me to enhance
+                        their digital presence.
                     </p>
                 </div>
 
-                <!-- Link Cepat -->
-                <div class="footer-column-link">
-                    <h3 class="from-bottom">Link Cepat</h3>
-                    <div class="footer-underline from-bottom"></div>
-                    <ul class="from-bottom">
-                        <li><a class="footer-link" href="#home">Home</a></li>
-                        <li><a class="footer-link" href="#about">About</a></li>
-                        <li>
-                            <a class="footer-link" href="#portfolio"
-                                >Portfolio</a
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="glass-card p-8 rounded-3xl relative flex flex-col"
+                        data-aos="fade-up"
+                    >
+                        <div
+                            class="absolute -top-5 left-8 text-5xl text-primary/30"
+                        >
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-16 md:w-24 aspect-square rounded-full bg-gradient-to-tr from-primary to-secondary p-0.5 shadow-lg shadow-primary/20"
                             >
-                        </li>
-                        <li><a class="footer-link" href="#">Skills</a></li>
-                        <li>
-                            <a class="footer-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+                                <img
+                                    src="src/assets/FirstClient.png"
+                                    alt="First Client"
+                                    class="w-full h-full rounded-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">
+                                    Budi Santoso
+                                </h4>
+                                <p
+                                    class="text-xs text-primary font-semibold uppercase tracking-wider"
+                                >
+                                    Founder, Cut & Glow Barbershop
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-gray-300 italic leading-relaxed flex-grow mb-6"
+                        >
+                            "The website created by Dannys has been a
+                            game-changer for my business. Customers can now
+                            easily view our services and book appointments
+                            directly via WhatsApp. The design is sleek, modern,
+                            and very professional!"
+                        </p>
+                        <div class="mt-auto text-yellow-500 text-sm flex gap-1">
+                            <i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i>
+                        </div>
+                    </div>
 
-                <!-- Sosial Media -->
-                <div class="footer-column">
-                    <h3 class="from-bottom">Sosial Media</h3>
-                    <div class="footer-underline from-bottom"></div>
-                    <p class="from-bottom">Kunjungi sosial media kami</p>
-                    <div class="footer-socials from-bottom">
-                        <a
-                            class="footer-social"
-                            href="https://www.facebook.com/awamg.mon"
-                            target="_blank"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a
-                            class="footer-social"
-                            href="https://www.instagram.com/pixvero.webdev?igsh=a3R4ZXZlYnc2M203"
-                            target="_blank"
-                            ><i class="fab fa-instagram"></i
-                        ></a>
-                        <a
-                            class="footer-social"
-                            href="https://github.com/Dannys02"
-                            target="_blank"
-                            ><i class="fab fa-github"></i
-                        ></a>
+                    <div
+                        class="glass-card p-8 rounded-3xl relative flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+                        <div
+                            class="absolute -top-5 left-8 text-5xl text-primary/30"
+                        >
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-16 md:w-24 aspect-square rounded-full bg-gradient-to-tr from-primary to-secondary p-0.5 shadow-lg shadow-primary/20"
+                            >
+                                <img
+                                    src="src/assets/SecondClient.jpeg"
+                                    alt="Second Client"
+                                    class="w-full h-full rounded-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">
+                                    Agung Cronos
+                                </h4>
+                                <p
+                                    class="text-xs text-primary font-semibold uppercase tracking-wider"
+                                >
+                                    CEO, Healthy Kitchen Hub
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-gray-300 italic leading-relaxed flex-grow mb-6"
+                        >
+                            "I didn't expect a small business website could look
+                            this premium. The landing page is incredibly
+                            responsive on mobile devices. Our brand trust has
+                            increased significantly since we launched this
+                            site."
+                        </p>
+                        <div class="mt-auto text-yellow-500 text-sm flex gap-1">
+                            <i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div
+                        class="glass-card p-8 rounded-3xl relative flex flex-col"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+                        <div
+                            class="absolute -top-5 left-8 text-5xl text-primary/30"
+                        >
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-16 md:w-24 aspect-square rounded-full bg-gradient-to-tr from-primary to-secondary p-0.5 shadow-lg shadow-primary/20"
+                            >
+                                <img
+                                    src="src/assets/ThirdClient.jpeg"
+                                    alt="Third Client"
+                                    class="w-full h-full rounded-full object-cover"
+                                />
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">
+                                    Hendra Wijaya
+                                </h4>
+                                <p
+                                    class="text-xs text-primary font-semibold uppercase tracking-wider"
+                                >
+                                    Manager, Local Retail Group
+                                </p>
+                            </div>
+                        </div>
+                        <p
+                            class="text-gray-300 italic leading-relaxed flex-grow mb-6"
+                        >
+                            "The web-based POS system Dannys built has
+                            streamlined our inventory management. It's fast,
+                            intuitive, and exactly what we needed. His technical
+                            support and attention to detail are top-notch."
+                        </p>
+                        <div class="mt-auto text-yellow-500 text-sm flex gap-1">
+                            <i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star"></i
+                            ><i class="fas fa-star-half-alt"></i>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="contact" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                    <p class="text-gray-400">
+                        Have a project in mind or just want to say hi? I'd love
+                        to hear from you!
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8" data-aos="fade-up">
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-2xl text-primary text-xl"
+                            >
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-sm text-gray-400 uppercase tracking-widest"
+                                >
+                                    Email
+                                </p>
+                                <p class="text-lg font-bold">
+                                    webdannys@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-2xl text-primary text-xl"
+                            >
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p
+                                    class="text-sm text-gray-400 uppercase tracking-widest"
+                                >
+                                    WhatsApp
+                                </p>
+                                <p class="text-lg font-bold">
+                                    +62 856-4583-7298
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="FormPage" class="space-y-4" data-aos="fade-up">
+                        <input
+                            type="text"
+                            id="NamaId"
+                            placeholder="Your Name"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:border-primary outline-none transition"
+                        />
+                        <input
+                            type="email"
+                            id="EmailId"
+                            placeholder="Your Email"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:border-primary outline-none transition"
+                        />
+                        <input
+                            type="text"
+                            id="SubjekId"
+                            placeholder="Subject"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:border-primary outline-none transition"
+                        />
+                        <textarea
+                            id="PesanId"
+                            rows="5"
+                            placeholder="Your Message"
+                            class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:border-primary outline-none transition"
+                        ></textarea>
+                        <button
+                            type="submit"
+                            class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition"
+                        >
+                            Send Message via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-12 border-t border-white/10 text-center">
+            <p class="text-gray-500">
+                &copy; 2026
+                <span class="text-primary font-bold">Dannys Martha</span>. All
+                Rights Reserved.
+            </p>
         </footer>
 
-        <div class="modal" id="cvModal">
-            <div class="modal-content">
-                <span class="close-btn" id="closeModal">&times;</span>
-                <h2>Preview CV</h2>
+        <div
+            id="cvModal"
+            class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-darkBg/90 backdrop-blur-md"
+        >
+            <div class="glass-card max-w-lg w-full p-8 rounded-3xl relative">
+                <button
+                    id="closeModal"
+                    class="absolute top-4 right-4 text-2xl text-gray-400 hover:text-white"
+                >
+                    &times;
+                </button>
+                <h2 class="text-2xl font-bold mb-6 text-primary">
+                    Curriculum Vitae
+                </h2>
                 <img
-                    loading="lazy"
                     src="src/assets/MyCVGuys.webp"
                     alt="CV Preview"
+                    class="w-full rounded-xl mb-6 shadow-xl border border-white/10"
                 />
-                <a href="cv-download.pdf" download class="download-btn"
-                    >Download CV</a
+                <a
+                    href="cv-download.pdf"
+                    download
+                    class="block w-full py-3 bg-primary text-white text-center font-bold rounded-xl"
+                    >Download PDF</a
                 >
             </div>
         </div>
 
-        <script src="src/js/main.js"></script>
+        <script>
+            // AOS Animation Initialize
+            AOS.init({ duration: 1000, once: true });
+
+            // Typing Effect
+            const textMain = " Dannys Martha Favrillia";
+            let index = 0;
+            let isDeleting = false;
+            const target = document.getElementById("name-typing");
+
+            function ketikLoop() {
+                if (!isDeleting) {
+                    target.textContent = textMain.substring(0, index + 1);
+                    index++;
+
+                    if (index === textMain.length) {
+                        setTimeout(() => {
+                            isDeleting = true;
+                            ketikLoop();
+                        }, 3000);
+                        return;
+                    }
+                } else {
+                    index--;
+                    target.textContent = textMain.substring(0, index);
+
+                    if (index === 2) {
+                        isDeleting = false;
+                    }
+                }
+
+                setTimeout(ketikLoop, isDeleting ? 50 : 100);
+            }
+
+            ketikLoop();
+
+            // Mobile Menu Toggle
+            function toggleMenu() {
+                const menu = document.getElementById("mobileMenu");
+                menu.classList.toggle("hidden");
+            }
+
+            // Modal Logic
+            const modal = document.getElementById("cvModal");
+            document.getElementById("modal-CV").onclick = () =>
+                modal.classList.remove("hidden");
+            document.getElementById("closeModal").onclick = () =>
+                modal.classList.add("hidden");
+            window.onclick = e => {
+                if (e.target == modal) modal.classList.add("hidden");
+            };
+
+            // Number Counter Animation
+            const counters = document.querySelectorAll(".counter");
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const target =
+                                +entry.target.getAttribute("data-target");
+                            let count = 0;
+                            const update = () => {
+                                const speed = target / 20;
+                                if (count < target) {
+                                    count += speed;
+                                    entry.target.innerText =
+                                        Math.ceil(count) + "+";
+                                    setTimeout(update, 100);
+                                } else {
+                                    entry.target.innerText = target + "+";
+                                }
+                            };
+                            update();
+                        }
+                    });
+                },
+                { threshold: 1 }
+            );
+            counters.forEach(c => observer.observe(c));
+
+            // WhatsApp Form Logic
+            document.getElementById("FormPage").onsubmit = function (e) {
+                e.preventDefault();
+                const name = document.getElementById("NamaId").value;
+                const sub = document.getElementById("SubjekId").value;
+                const msg = document.getElementById("PesanId").value;
+                const phone = "6285645837298";
+
+                if (!name || !msg)
+                    return alert("Please fill in your name and message!");
+
+                const text = `Hi Dannys, my name is ${name}. %0A*Subject:* ${sub} %0A*Message:* ${msg}`;
+                window.open(
+                    `https://api.whatsapp.com/send?phone=${phone}&text=${text}`,
+                    "_blank"
+                );
+            };
+        </script>
     </body>
 </html>
