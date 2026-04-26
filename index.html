@@ -177,6 +177,11 @@
             <a href="#skills" class="nav-link hover:text-primary">Skills</a>
           </li>
           <li>
+            <a href="#certificates" class="nav-link hover:text-primary"
+              >Certificates</a
+            >
+          </li>
+          <li>
             <a href="#contact" class="nav-link hover:text-primary">Contact</a>
           </li>
         </ul>
@@ -194,6 +199,7 @@
         <a href="#about" onclick="toggleMenu()">About</a>
         <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
         <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#certificates" onclick="toggleMenu()">Certificates</a>
         <a href="#contact" onclick="toggleMenu()">Contact</a>
       </div>
     </header>
@@ -205,10 +211,7 @@
       <div
         class="container mx-auto max-w-6xl flex flex-col pt-5 lg:flex-row justify-between items-center gap-12"
       >
-        <div
-          class="order-2 lg:order-1"
-          data-aos="fade-up"
-        >
+        <div class="order-2 lg:order-1" data-aos="fade-up">
           <h2 class="text-4xl md:text-6xl font-bold mb-4">
             Hi, I'm <br />
             <span id="name-typing" class="text-primary glow-text"></span>
@@ -290,9 +293,7 @@
         <div
           class="container mx-auto max-w-6xl flex flex-col pt-5 lg:flex-row justify-between items-center gap-12"
         >
-          <div
-            class="max-w-2xl order-2 lg:order-1"
-          >
+          <div class="max-w-2xl order-2 lg:order-1">
             <div class="space-y-6 text-gray-300 text-lg">
               <p data-aos="fade-up">
                 Hi, I'm Dannys — a web developer focused on building clean,
@@ -312,7 +313,7 @@
 
             <div
               data-aos-delay="200"
-              class="grid grid-cols-3 gap-4 mt-12"
+              class="grid grid-cols-3 space-x-4 mt-12"
               data-aos="fade-up"
             >
               <div class="glass-card p-4 rounded-2xl text-center">
@@ -329,7 +330,7 @@
               <div class="glass-card p-4 rounded-2xl text-center">
                 <h3
                   class="text-3xl font-bold text-primary mb-2 counter"
-                  data-target="69"
+                  data-target="30"
                 >
                   0
                 </h3>
@@ -340,7 +341,7 @@
               <div class="glass-card p-4 rounded-2xl text-center">
                 <h3
                   class="text-3xl font-bold text-primary mb-2 counter"
-                  data-target="38"
+                  data-target="26"
                 >
                   0
                 </h3>
@@ -376,7 +377,7 @@
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            class="glass-card rounded-2xl overflow-hidden group"
+            class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group"
             data-aos="fade-up"
           >
             <div class="h-48 overflow-hidden">
@@ -386,12 +387,12 @@
                 alt="Barbershop Website"
               />
             </div>
-            <div class="p-6">
+            <div class="flex flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Barbershop Website</h3>
-              <p class="text-gray-400 text-sm mb-4">
+              <p class="text-gray-400 text-sm mb-4 flex-grow">
                 Online booking system with modern design.
               </p>
-              <div class="flex flex-wrap gap-2 mb-6">
+              <div class="flex flex-wrap gap-2 mb-6 mt-auto">
                 <span
                   class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
                   >Laravel</span
@@ -417,7 +418,7 @@
           </div>
 
           <div
-            class="glass-card rounded-2xl overflow-hidden group"
+            class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group"
             data-aos="fade-up"
             data-aos-delay="100"
           >
@@ -428,12 +429,12 @@
                 alt="Restaurant Website"
               />
             </div>
-            <div class="p-6">
+            <div class="flex flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Restaurant Website</h3>
-              <p class="text-gray-400 text-sm mb-4">
+              <p class="text-gray-400 text-sm mb-4 flex-grow">
                 Interactive landing page and menu management for food sales.
               </p>
-              <div class="flex flex-wrap gap-2 mb-6">
+              <div class="flex flex-wrap gap-2 mb-6 mt-auto">
                 <span
                   class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
                   >PHP</span
@@ -463,7 +464,7 @@
           </div>
 
           <div
-            class="glass-card rounded-2xl overflow-hidden group"
+            class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -474,12 +475,12 @@
                 alt="Cashier Website"
               />
             </div>
-            <div class="p-6">
+            <div class="flex flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Cashier Website System</h3>
-              <p class="text-gray-400 text-sm mb-4">
+              <p class="text-gray-400 text-sm mb-4 flex-grow">
                 Lightweight web-based cashier system built with React JS.
               </p>
-              <div class="flex flex-wrap gap-2 mb-6">
+              <div class="flex flex-wrap gap-2 mb-6 mt-auto">
                 <span
                   class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
                   >React</span
@@ -510,7 +511,7 @@
         >
           Tech Stack
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           <div class="glass-card p-8 rounded-2xl" data-aos="flip-left">
             <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
             <p class="font-bold">HTML5</p>
@@ -583,7 +584,126 @@
       </div>
     </section>
 
-    <section id="testimonial" class="py-24 bg-black/10">
+    <section id="certificates" class="py-24">
+      <div class="container mx-auto px-6">
+
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl font-bold inline-block border-b-4 border-primary pb-2"
+          >
+            My Certificates
+          </h2>
+          <p class="text-gray-400 mt-4">
+            Some certifications that validate my skills and learning journey.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div
+            class="glass-card flex flex-col rounded-2xl overflow-hidden group"
+            data-aos="fade-up"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="src/assets/certificate/certificate1.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                alt="Certificate 1"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-lg font-bold mb-2 flex-grow">1st Place in Web Programming using Native PHP</h3>
+              <p class="text-gray-400 text-sm mb-4">Issued by PT. HUMMATECH (Industrial Class)</p>
+              <a
+                href="src/assets/certificate/certificate1.jpeg"
+                target="_blank"
+                class="text-primary hover:underline text-sm font-medium mt-auto"
+              >
+                View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="glass-card flex flex-col rounded-2xl overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="src/assets/certificate/certificate2.jpeg"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                alt="Certificate 2"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-lg font-bold mb-2 flex-grow">2nd Place in Front-End Web with Bootstrap</h3>
+              <p class="text-gray-400 text-sm mb-4">Issued by PT. HUMMATECH (Industrial Class)</p>
+              <a
+                href="src/assets/certificate/certificate2.jpeg"
+                target="_blank"
+                class="text-primary hover:underline text-sm font-medium mt-auto"
+              >
+                View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="glass-card flex flex-col rounded-2xl overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="src/assets/certificate/php-certificate.png"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                alt="Certificate 2"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-lg font-bold mb-2 flex-grow">Learning PHP Programming</h3>
+              <p class="text-gray-400 text-sm mb-4">Issued by PT. HUMMATECH via GetSkill</p>
+              <a
+                href="src/assets/certificate/php-certificate.png"
+                target="_blank"
+                class="text-primary hover:underline text-sm font-medium mt-auto"
+              >
+                View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="glass-card flex flex-col rounded-2xl overflow-hidden group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="h-48 overflow-hidden">
+              <img
+                src="src/assets/certificate/laravel-certificate.png"
+                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                alt="Certificate 2"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <h3 class="text-lg font-bold mb-2 flex-grow">Learning Laravel Framework</h3>
+              <p class="text-gray-400 text-sm mb-4">Issued by PT. HUMMATECH via GetSkill</p>
+              <a
+                href="src/assets/certificate/laravel-certificate.png"
+                target="_blank"
+                class="text-primary hover:underline text-sm font-medium mt-auto"
+              >
+                View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonial" class="py-24 bg-black/20">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16" data-aos="fade-up">
           <h2
