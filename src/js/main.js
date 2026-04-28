@@ -41,12 +41,12 @@ function toggleMenu() {
 
 // Modal Logic
 const modal = document.getElementById("cvModal");
-document.getElementById("modal-CV").onclick = () =>
+document.getElementById("modal-CV").onclick = () => {
     modal.classList.remove("hidden");
-document.getElementById("closeModal").onclick = () =>
+    document.body.classList.add('overflow-hidden');
+};
+document.getElementById("closeModal").onclick = () => {
     modal.classList.add("hidden");
-window.onclick = (e) => {
-    if (e.target == modal) modal.classList.add("hidden");
 };
 
 // Number Counter Animation
