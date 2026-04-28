@@ -148,7 +148,7 @@
   </style>
 </head>
 
-<body class="bg-cosmic-gradient">
+<body class="bg-cosmic-gradient w-full">
   <header class="fixed top-0 w-full z-50 bg-darkBg/60 backdrop-blur-lg border-b border-white/10">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
       <h2 class="text-2xl font-bold text-primary tracking-wider">
@@ -205,10 +205,10 @@
         </p>
         <div class="flex items-center text-sm gap-4">
           <a href="#portfolio"
-            class="px-8 py-3 bg-primary text-slate-950 font-bold rounded-full hover:shadow-[0_0_20px_rgba(187,134,252,0.6)] transition duration-300">View
+            class="px-8 py-3 text-xs bg-primary text-slate-950 font-bold rounded-full hover:shadow-[0_0_20px_rgba(187,134,252,0.6)] transition duration-300">View
             My Work</a>
           <button id="modal-CV"
-            class="px-8 py-3 border border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition duration-300">
+            class="px-8 py-3 text-xs border border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition duration-300">
             Download CV
           </button>
         </div>
@@ -259,7 +259,7 @@
             </p>
           </div>
 
-          <div data-aos-delay="200" class="grid grid-cols-3 space-x-4 mt-12" data-aos="fade-up">
+          <div data-aos-delay="200" class="grid grid-cols-3 gap-2 mt-12" data-aos="fade-up">
             <div class="glass-card p-4 rounded-2xl text-center">
               <h3 class="text-3xl font-bold text-primary mb-2 counter" data-target="1">
                 0
@@ -520,9 +520,9 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass-card p-8 rounded-3xl relative flex flex-col" data-aos="fade-up">
+        <div class="group glass-card p-8 rounded-3xl relative flex flex-col" data-aos="fade-up">
           <div class="absolute -top-5 left-8 text-5xl text-primary/30">
-            <i class="fas fa-quote-left"></i>
+            <i class="group-hover:text-primary/70 fas fa-quote-left"></i>
           </div>
           <div class="flex items-center gap-4 mb-6">
             <div
@@ -549,9 +549,9 @@
           </div>
         </div>
 
-        <div class="glass-card p-8 rounded-3xl relative flex flex-col" data-aos="fade-up" data-aos-delay="100">
+        <div class="group glass-card p-8 rounded-3xl relative flex flex-col" data-aos="fade-up" data-aos-delay="100">
           <div class="absolute -top-5 left-8 text-5xl text-primary/30">
-            <i class="fas fa-quote-left"></i>
+            <i class="group-hover:text-primary/70 fas fa-quote-left"></i>
           </div>
           <div class="flex items-center gap-4 mb-6">
             <div
@@ -578,9 +578,9 @@
           </div>
         </div>
 
-        <div class="glass-card p-8 rounded-3xl relative flex flex-col" data-aos="fade-up" data-aos-delay="200">
+        <div class="group glass-card p-8 rounded-3xl relative flex flex-col" data-aos="fade-up" data-aos-delay="200">
           <div class="absolute -top-5 left-8 text-5xl text-primary/30">
-            <i class="fas fa-quote-left"></i>
+            <i class="group-hover:text-primary/70 fas fa-quote-left"></i>
           </div>
           <div class="flex items-center gap-4 mb-6">
             <div
@@ -620,9 +620,9 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div class="space-y-8" data-aos="fade-up">
-          <div class="flex items-center gap-6">
+          <div class="flex items-start md:items-center gap-6">
             <div class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-2xl text-primary text-xl">
               <i class="fas fa-envelope"></i>
             </div>
@@ -630,7 +630,7 @@
               <p class="text-sm text-gray-400 uppercase tracking-widest">
                 Email
               </p>
-              <p class="text-lg font-bold">danis.samsunga01@gmail.com</p>
+              <p class="text-lg font-bold">danis.samsunga01@gmail<br class="md:hidden">.com</p>
             </div>
           </div>
           <div class="flex items-center gap-6">

@@ -47,6 +47,7 @@ document.getElementById("modal-CV").onclick = () => {
 };
 document.getElementById("closeModal").onclick = () => {
     modal.classList.add("hidden");
+    document.body.classList.remove('overflow-hidden');
 };
 
 // Number Counter Animation
@@ -61,10 +62,10 @@ const observer = new IntersectionObserver(
                     const speed = target / 20;
                     if (count < target) {
                         count += speed;
-                        entry.target.innerText = Math.ceil(count) + "+";
+                        entry.target.innerText = Math.ceil(count);
                         setTimeout(update, 100);
                     } else {
-                        entry.target.innerText = target + "+";
+                        entry.target.innerText = target;
                     }
                 };
                 update();
