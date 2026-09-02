@@ -80,6 +80,7 @@ counters.forEach((c) => observer.observe(c));
 document.getElementById("FormPage").onsubmit = function (e) {
     e.preventDefault();
     const name = document.getElementById("NamaId").value;
+    const email = document.getElementById("EmailId").value;
     const sub = document.getElementById("SubjekId").value;
     const msg = document.getElementById("PesanId").value;
     const phone = "6285645837298";
@@ -87,7 +88,7 @@ document.getElementById("FormPage").onsubmit = function (e) {
     if (!name || !msg)
         return alert("Please fill in your name and message!");
 
-    const text = `Hi Dannys, my name is ${name}. %0A*Subject:* ${sub} %0A*Message:* ${msg}`;
+    const text = `Hi Dannys, my name is ${name}. ${email ? `%0A*Email:* ${email}` : ''} %0A*Subject:* ${sub} %0A*Message:* ${msg}`;
     window.open(
         `https://api.whatsapp.com/send?phone=${phone}&text=${text}`,
         "_blank",
