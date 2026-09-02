@@ -100,6 +100,17 @@
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
+      .glass-card-skills {
+        height: 200px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(225, 29, 72, 0.2);
+      }
+
       .glass-card-cv {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(12px);
@@ -111,6 +122,11 @@
         border-color: #e11d48;
         box-shadow: 0 0 25px rgba(225, 29, 72, 0.3);
         transform: translateY(-10px);
+      }
+
+      .glass-card-skills:hover {
+        border-color: #e11d48;
+        box-shadow: 0 0 25px rgba(225, 29, 72, 0.3);
       }
 
       .glass-card-cv:hover {
@@ -195,7 +211,7 @@
             >
           </li>
           <li>
-            <a href="#skills" class="nav-link hover:text-primary">Services</a>
+            <a href="#skills" class="nav-link hover:text-primary">Skills</a>
           </li>
           <li>
             <a href="#certificates" class="nav-link hover:text-primary"
@@ -256,7 +272,7 @@
         <div class="order-2 lg:order-1" data-aos="fade-up">
           <h2 class="text-4xl md:text-6xl font-bold mb-4">
             Hi, I'm <br />
-            <span id="name-typing" class="text-primary glow-text"></span>
+            <span id="name-typing" class="text-primary glow-text uppercase"></span>
           </h2>
           <p class="text-gray-400 text-lg mb-8 max-w-lg">
             Junior Full Stack Developer specializing in Laravel & React. I build
@@ -342,21 +358,15 @@
             </div>
 
             <div
-              class="space-y-6 text-gray-300 text-md max-w-xl"
+              class="space-y-6 text-gray-300 text-md max-w-xl leading-[2.1]"
             >
               <p data-aos="fade-up">
                 I’m a web developer specializing in building responsive and
                 user-friendly websites and web applications.
-              </p>
-
-              <p data-aos="fade-up" data-aos-delay="100">
                 I have built various independent and team projects, including
                 cashier systems, restaurant websites, barbershop websites,
                 product catalogs, landing pages, and personal portfolios using
                 HTML, CSS, JavaScript, PHP/Laravel, React, and Tailwind CSS.
-              </p>
-
-              <p data-aos="fade-up" data-aos-delay="200">
                 I’m comfortable working on projects from scratch, implementing
                 responsive interfaces, developing CRUD functionality, working
                 with databases and SQL, and building RESTful APIs. I focus on
@@ -636,78 +646,91 @@
         >
           My Skills
         </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-          <div class="glass-card p-8 rounded-2xl" data-aos="flip-left">
-            <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
-            <p class="font-bold">HTML5</p>
-            <p class="font-bold text-primary text-xs">Advanced</p>
+        <div>
+
+          <!-- baris 1 -->
+          <div class="flex justify-center items-center gap-12">
+            <div class="glass-card-skills p-4 rounded-2xl" data-aos="flip-up">
+              <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
+              <p class="font-bold">HTML5</p>
+              <p class="font-bold text-primary text-xs">Advanced</p>
+            </div>
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="100"
+            >
+              <i class="fab fa-css3-alt text-5xl text-blue-500 mb-4"></i>
+              <p class="font-bold">CSS3</p>
+              <p class="font-bold text-primary text-xs">Advanced</p>
+            </div>
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="200"
+            >
+              <i class="fab fa-js text-5xl text-yellow-400 mb-4"></i>
+              <p class="font-bold">JavaScript</p>
+              <p class="font-bold text-primary text-xs">Intermediate</p>
+            </div>
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="300"
+            >
+              <i class="fab fa-laravel text-5xl text-red-500 mb-4"></i>
+              <p class="font-bold">Laravel</p>
+              <p class="font-bold text-primary text-xs">Intermediate</p>
+            </div>
           </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="100"
-          >
-            <i class="fab fa-css3-alt text-5xl text-blue-500 mb-4"></i>
-            <p class="font-bold">CSS3</p>
-            <p class="font-bold text-primary text-xs">Advanced</p>
+
+          <!-- baris 2 -->
+          <div class="flex justify-center items-center gap-12 mt-8">
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="400"
+            >
+              <i class="fab fa-react text-5xl text-cyan-400 mb-4"></i>
+              <p class="font-bold">React JS</p>
+              <p class="font-bold text-primary text-xs">Intermediate</p>
+            </div>
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="500"
+            >
+              <i class="fab fa-php text-5xl text-indigo-400 mb-4"></i>
+              <p class="font-bold">PHP</p>
+              <p class="font-bold text-primary text-xs">Intermediate</p>
+            </div>
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="600"
+            >
+              <i class="fas fa-code text-5xl text-secondary mb-4"></i>
+              <p class="font-bold">Tailwind CSS</p>
+              <p class="font-bold text-primary text-xs">Intermediate</p>
+            </div>
           </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="200"
-          >
-            <i class="fab fa-js text-5xl text-yellow-400 mb-4"></i>
-            <p class="font-bold">JavaScript</p>
-            <p class="font-bold text-primary text-xs">Intermediate</p>
+
+          <!-- baris 3 -->
+          <div class="flex justify-center items-center gap-12 mt-8">
+            <div
+              class="glass-card-skills p-4 rounded-2xl"
+              data-aos="flip-up"
+              data-aos-delay="700"
+            >
+              <i class="fab fa-bootstrap text-5xl text-purple-600 mb-4"></i>
+              <p class="font-bold">Bootstrap</p>
+              <p class="font-bold text-primary text-xs">Intermediate</p>
+            </div>
           </div>
-          <div
+
+          <!-- <div
             class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="300"
-          >
-            <i class="fab fa-laravel text-5xl text-red-500 mb-4"></i>
-            <p class="font-bold">Laravel</p>
-            <p class="font-bold text-primary text-xs">Intermediate</p>
-          </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="400"
-          >
-            <i class="fab fa-react text-5xl text-cyan-400 mb-4"></i>
-            <p class="font-bold">React JS</p>
-            <p class="font-bold text-primary text-xs">Intermediate</p>
-          </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="500"
-          >
-            <i class="fab fa-php text-5xl text-indigo-400 mb-4"></i>
-            <p class="font-bold">PHP</p>
-            <p class="font-bold text-primary text-xs">Intermediate</p>
-          </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="600"
-          >
-            <i class="fas fa-code text-5xl text-secondary mb-4"></i>
-            <p class="font-bold">Tailwind CSS</p>
-            <p class="font-bold text-primary text-xs">Intermediate</p>
-          </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
-            data-aos-delay="700"
-          >
-            <i class="fab fa-bootstrap text-5xl text-purple-600 mb-4"></i>
-            <p class="font-bold">Bootstrap</p>
-            <p class="font-bold text-primary text-xs">Intermediate</p>
-          </div>
-          <div
-            class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
+            data-aos="flip-up"
             data-aos-delay="800"
           >
             <i class="fab fa-angular text-5xl text-red-600 mb-4"></i>
@@ -716,14 +739,14 @@
           </div>
           <div
             class="glass-card p-8 rounded-2xl"
-            data-aos="flip-left"
+            data-aos="flip-up"
             data-aos-delay="900"
           >
             <i class="fas fa-laptop-code text-5xl text-purple-600 mb-4"></i>
 
             <p class="font-bold">REST API</p>
             <p class="font-bold text-primary text-xs">Beginner</p>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -746,7 +769,7 @@
             class="glass-card flex flex-col rounded-2xl overflow-hidden group"
             data-aos="fade-up"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/certificate/certificate1.jpeg"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
@@ -775,7 +798,7 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/certificate/certificate2.jpeg"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
@@ -804,7 +827,7 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/certificate/php-certificate.png"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
@@ -833,7 +856,7 @@
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/certificate/laravel-certificate.png"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
