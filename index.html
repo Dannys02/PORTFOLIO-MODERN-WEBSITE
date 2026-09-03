@@ -63,7 +63,7 @@
     />
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-     <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="./dist/output.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -192,42 +192,79 @@
 
   <body class="bg-cosmic-gradient w-full">
     <header
-      class="fixed max-w-6xl flex justify-between items-center top-5 left-1/2 transform -translate-x-1/2 w-full z-50 bg-darkBg/60 backdrop-blur-lg border border-white/10 rounded-full px-12 py-2"
+      class="fixed w-full max-w-6xl mx-auto top-0 md:top-5 left-1/2 transform -translate-x-1/2 z-50 bg-darkBg/60 backdrop-blur-lg border border-white/10 rounded-none md:rounded-full px-6 md:px-12 py-3"
     >
-      <h2 class="text-2xl font-bold text-primary tracking-wider">
-        &lt;Danny<span class="text-white">S&gt;</span>
-      </h2>
+      <div class="flex justify-between items-center">
+        <h2 class="text-lg md:text-2xl font-bold text-primary tracking-wider">
+          &lt;Danny<span class="text-white">S&gt;</span>
+        </h2>
 
-      <nav class="container mx-auto px-6 py-4 flex items-center justify-center">
-        <ul id="navMenu" class="hidden md:flex space-x-8 font-medium">
-          <li>
-            <a href="#home" class="nav-link hover:text-primary">Home</a>
-          </li>
-          <li>
-            <a href="#about" class="nav-link hover:text-primary">About</a>
-          </li>
-          <li>
-            <a href="#portfolio" class="nav-link hover:text-primary"
-              >Portfolio</a
-            >
-          </li>
-          <li>
-            <a href="#skills" class="nav-link hover:text-primary">Skills</a>
-          </li>
-          <li>
-            <a href="#certificates" class="nav-link hover:text-primary"
-              >Certificates</a
-            >
-          </li>
-          <li>
-            <a href="#contact" class="nav-link hover:text-primary">Contact</a>
-          </li>
-        </ul>
+        <nav class="hidden md:flex mx-auto items-center justify-center">
+          <ul id="navMenu" class="hidden md:flex space-x-8 font-medium">
+            <li>
+              <a href="#home" class="nav-link hover:text-primary">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="nav-link hover:text-primary">About</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="nav-link hover:text-primary"
+                >Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="#skills" class="nav-link hover:text-primary">Skills</a>
+            </li>
+            <li>
+              <a href="#certificates" class="nav-link hover:text-primary"
+                >Certificates</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="nav-link hover:text-primary">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
-        <button class="md:hidden text-2xl" onclick="toggleMenu()">
+        <div class="hidden md:flex items-center gap-6 text-2xl">
+          <a
+            href="https://github.com/Dannys02"
+            target="_blank"
+            class="hover:text-primary transition"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/pixvero.webdev"
+            target="_blank"
+            class="hover:text-primary transition"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/dannys-favrillia-3792013a5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
+            class="hover:text-primary transition"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+
+        <button class="block md:hidden text-2xl" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </button>
-      </nav>
+      </div>
+    </header>
+
+    <div
+      id="mobileMenu"
+      class="hidden fixed top-15 left-0 right-0 mx-auto w-full z-100 bg-darkBg border-b border-white/10 p-6 space-y-4"
+    >
+      <div class="flex flex-col space-y-4">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+        <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#certificates" onclick="toggleMenu()">Certificates</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+      </div>
 
       <div class="flex items-center gap-6 text-2xl">
         <a
@@ -249,19 +286,7 @@
           ><i class="fab fa-linkedin"></i
         ></a>
       </div>
-
-      <div
-        id="mobileMenu"
-        class="hidden md:hidden bg-darkBg border-b border-white/10 flex flex-col p-6 space-y-4"
-      >
-        <a href="#home" onclick="toggleMenu()">Home</a>
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
-        <a href="#skills" onclick="toggleMenu()">Skills</a>
-        <a href="#certificates" onclick="toggleMenu()">Certificates</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
-      </div>
-    </header>
+    </div>
 
     <section
       id="home"
@@ -287,13 +312,13 @@
             <a
               href="#portfolio"
               class="px-8 py-3 text-xs md:text-sm bg-primary text-white font-bold rounded-full hover:shadow-[0_0_20px_rgba(225,29,72,0.6)] transition duration-300"
-              >View My Work</a
+              >My Work</a
             >
             <button
               id="modal-CV"
               class="px-8 py-3 text-xs md:text-sm border border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition duration-300"
             >
-              Download CV
+              My Resume
             </button>
           </div>
         </div>
@@ -308,7 +333,7 @@
           <img
             src="src/assets/personal/Logo.jpeg"
             alt="Dannys Logo"
-            class="relative z-10 w-full h-[300px] lg:h-[350px] rounded-full object-cover border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
+            class="relative z-10 w-full h-[200px] lg:h-[350px] rounded-full object-cover border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
           />
         </div>
       </div>
@@ -328,7 +353,7 @@
           class="container flex flex-col pt-5 lg:flex-row justify-between items-center"
         >
           <div
-            class="max-w-7xl mx-auto flex justify-center items-center space-x-24 flex-col lg:flex-row"
+            class="max-w-7xl mx-auto flex justify-center items-center space-x-0 md:space-x-24 flex-col lg:flex-row"
           >
             <!-- card gambar -->
             <div
@@ -361,14 +386,16 @@
               </div>
             </div>
 
-            <div class="space-y-6 text-gray-300 text-md max-w-xl leading-[2.1]">
+            <div
+              class="space-y-6 text-gray-300 text-sm md:max-w-xl leading-[2.1] mt-8 lg:mt-0 text-center lg:text-left"
+            >
               <p data-aos="fade-up">
-                I’m a web developer specializing in building responsive and
+                I'm a web developer specializing in building responsive and
                 user-friendly websites and web applications. I have built
                 various independent and team projects, including cashier
                 systems, restaurant websites, barbershop websites, product
                 catalogs, landing pages, and personal portfolios using HTML,
-                CSS, JavaScript, PHP/Laravel, React, and Tailwind CSS. I’m
+                CSS, JavaScript, PHP/Laravel, React, and Tailwind CSS. I'm
                 comfortable working on projects from scratch, implementing
                 responsive interfaces, developing CRUD functionality, working
                 with databases and SQL, and building RESTful APIs. I focus on
@@ -395,14 +422,14 @@
             class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group"
             data-aos="fade-up"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/portfolio/Barbeshop.webp"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 alt="Barbershop Website"
               />
             </div>
-            <div class="flex flex-col p-6 flex-1 justify-between">
+            <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Barbershop Website</h3>
               <p class="text-gray-400 text-sm mb-4 flex-grow">
                 Online booking system with modern design.
@@ -432,14 +459,14 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/portfolio/Restoran.webp"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 alt="Restaurant Website"
               />
             </div>
-            <div class="flex flex-col p-6 flex-1 justify-between">
+            <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Restaurant Website</h3>
               <p class="text-gray-400 text-sm mb-4 flex-grow">
                 Interactive landing page and menu management for food sales.
@@ -478,14 +505,14 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/portfolio/Kasir.webp"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 alt="Cashier Website System"
               />
             </div>
-            <div class="flex flex-col p-6 flex-1 justify-between">
+            <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Cashier Website System</h3>
               <p class="text-gray-400 text-sm mb-4 flex-grow">
                 Lightweight web-based cashier system built with React JS.
@@ -515,14 +542,14 @@
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/portfolio/AhaConvert_KasirLaravel.webp"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 alt="Simple Cashier Website"
               />
             </div>
-            <div class="flex flex-col p-6 flex-1 justify-between">
+            <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Simple Cashier Website</h3>
               <p class="text-gray-400 text-sm mb-4 flex-grow">
                 A school assignment website that has been further developed
@@ -562,14 +589,14 @@
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/portfolio/AhaConvert_Keyfood.webp"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 alt="Simple Landing Page"
               />
             </div>
-            <div class="flex flex-col p-6 flex-1 justify-between">
+            <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Simple Landing Page</h3>
               <p class="text-gray-400 text-sm mb-4 flex-grow">
                 A simple landing page with a minimalist, responsive design.
@@ -604,14 +631,14 @@
             data-aos="fade-up"
             data-aos-delay="500"
           >
-            <div class="h-48 overflow-hidden">
+            <div class="h-64 overflow-hidden">
               <img
                 src="src/assets/portfolio/AhaConvert_WebSchool.webp"
                 class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                 alt="Website School Project"
               />
             </div>
-            <div class="flex flex-col p-6 flex-1 justify-between">
+            <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
               <h3 class="text-xl font-bold mb-2">Website School Project</h3>
               <p class="text-gray-400 text-sm mb-4 flex-grow">
                 School website with CRUD functionality and a modern, dark
@@ -650,7 +677,9 @@
         </h2>
         <div>
           <!-- baris 1 -->
-          <div class="flex justify-center items-center gap-12">
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-12"
+          >
             <div class="glass-card-skills p-4 rounded-2xl" data-aos="flip-up">
               <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
               <p class="font-bold">HTML5</p>
@@ -686,7 +715,9 @@
           </div>
 
           <!-- baris 2 -->
-          <div class="flex justify-center items-center gap-12 mt-8">
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-12 mt-8"
+          >
             <div
               class="glass-card-skills p-4 rounded-2xl"
               data-aos="flip-up"
@@ -717,7 +748,9 @@
           </div>
 
           <!-- baris 3 -->
-          <div class="flex justify-center items-center gap-12 mt-8">
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-12 mt-8"
+          >
             <div
               class="glass-card-skills p-4 rounded-2xl"
               data-aos="flip-up"
@@ -1087,8 +1120,8 @@
               </div>
             </div>
 
-            <div class="h-[200px] flex items-center gap-6">
-              <div class="h-full flex justify-start gap-6">
+            <div class="h-[200px] flex items-start gap-6">
+              <div class="h-full flex justify-start">
                 <div
                   class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-2xl text-primary text-xl"
                 >
@@ -1112,15 +1145,13 @@
                 </div>
               </div>
 
-              <div class="flex flex-col">
-                <p class="text-sm text-gray-400 uppercase tracking-widest">
+              <div>
+                <p class="text-sm text-gray-400 uppercase tracking-widest mb-2">
                   Address
                 </p>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d845.9714576858041!2d114.19569052045544!3d-8.362149610116187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1788324353237!5m2!1sid!2sid"
-                  class="rounded-lg"
-                  width="400"
-                  height="200"
+                  class="rounded-lg h-[100px] w-[200px] md:h-[200px] md:w-[400px]"
                   style="border: 0"
                   allowfullscreen=""
                   loading="lazy"
@@ -1169,8 +1200,9 @@
     <footer class="py-12 border-t border-white/10 text-center">
       <p class="text-gray-500">
         &copy; 2026
-        <span class="text-primary uppercase font-bold">Dannys Martha Favrillia</span>. All
-        Rights Reserved.
+        <span class="text-primary uppercase font-bold"
+          >Dannys Martha Favrillia</span
+        >. All Rights Reserved.
       </p>
     </footer>
 
