@@ -109,7 +109,7 @@ window.addEventListener("DOMContentLoaded", () => {
       loaderBrand.style.transition = "all 0.85s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease-in";
       loaderBrand.style.left = `${targetCenterX}px`;
       loaderBrand.style.top = `${targetCenterY}px`;
-      loaderBrand.style.transform = `translate(-50%, -20%) scale(${finalScale})`;
+      loaderBrand.style.transform = `translate(-50%, -80%) scale(${finalScale})`;
       loaderBrand.style.opacity = "0";
 
       // Setelah animasi move & fade out selesai (850ms), beri jeda 3 detik
