@@ -187,15 +187,168 @@
           opacity: 0;
         }
       }
+
+      /* Preloader & Smooth Transitions */
+      .loader-bg-glow-1 {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(225, 29, 72, 0.25) 0%, rgba(225, 29, 72, 0) 70%);
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        top: -100px;
+        left: -100px;
+        animation: pulseSlow 4s ease-in-out infinite alternate;
+      }
+
+      .loader-bg-glow-2 {
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(251, 113, 133, 0.2) 0%, rgba(251, 113, 133, 0) 70%);
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        bottom: -100px;
+        right: -100px;
+        animation: pulseSlow 4s ease-in-out infinite alternate-reverse;
+      }
+
+      @keyframes pulseSlow {
+        0% { transform: scale(0.9); opacity: 0.6; }
+        100% { transform: scale(1.15); opacity: 1; }
+      }
+
+      #loader-brand-container {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        z-index: 50;
+      }
+
+      #loader-brand-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        transform-origin: center center;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        opacity: 0;
+        pointer-events: none;
+        white-space: nowrap;
+        text-align: center;
+        z-index: 60;
+      }
+
+      #main-header {
+        opacity: 0;
+        transform: translate(-50%, -25px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      #main-header.header-visible {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+      #main-content {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      #main-content.content-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
 
-  <body class="bg-cosmic-gradient w-full">
+  <body class="relative bg-cosmic-gradient w-full overflow-hidden">
+    <!-- Preloader Overlay -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#090204] overflow-hidden select-none"
+    >
+      <div class="loader-bg-glow-1"></div>
+      <div class="loader-bg-glow-2"></div>
+
+      <!-- Stage 1: Progress Counter & Bar -->
+      <div
+        id="loader-progress"
+        class="flex flex-col items-center justify-center z-10 w-full max-w-xs sm:max-w-md px-6 transition-all duration-500"
+      >
+        <div class="flex items-baseline justify-center mb-4">
+          <span
+            id="loader-counter"
+            class="text-6xl sm:text-7xl font-extrabold text-white tracking-tight drop-shadow-[0_0_25px_rgba(225,29,72,0.6)] font-mono"
+            >0</span
+          >
+          <span class="text-2xl sm:text-3xl font-bold text-primary ml-1">%</span>
+        </div>
+
+        <div
+          class="w-full h-2.5 sm:h-3 bg-white/5 border border-primary/30 rounded-full p-[2px] shadow-[0_0_15px_rgba(225,29,72,0.2)] backdrop-blur-md overflow-hidden relative"
+        >
+          <div
+            id="loader-bar"
+            class="h-full bg-gradient-to-r from-[#e11d48] to-[#fb7185] rounded-full w-0 transition-all duration-75 shadow-[0_0_15px_rgba(225,29,72,0.8)] relative"
+          >
+            <div
+              class="absolute right-0 top-0 bottom-0 w-2 bg-white/80 rounded-full blur-[1px]"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          class="mt-4 flex items-center justify-between w-full text-xs tracking-widest uppercase text-gray-400 font-medium"
+        >
+          <span class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+          </span>
+          <span id="loader-status" class="text-secondary font-semibold">0%</span>
+        </div>
+      </div>
+
+      <!-- Stage 2: Welcome Text -->
+      <div
+        id="loader-welcome"
+        class="absolute z-10 text-center px-4 opacity-0 transition-all duration-700 ease-out"
+      >
+        <h3 class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-200 tracking-wider">
+          welcome to
+          <span
+            class="text-primary font-bold underline decoration-primary/40 underline-offset-8 drop-shadow-[0_0_20px_rgba(225,29,72,0.5)]"
+            >my website</span
+          >
+        </h3>
+      </div>
+
+      <!-- Stage 3: Animated Brand Logo "Dannys" / "<DannyS>" -->
+      <div id="loader-brand-container">
+        <h2
+          id="loader-brand-text"
+          class="text-4xl sm:text-6xl md:text-7xl font-bold text-primary tracking-wider drop-shadow-[0_0_35px_rgba(225,29,72,0.8)]"
+        >
+          &lt;Danny<span class="text-white">S&gt;</span>
+        </h2>
+      </div>
+    </div>
+
     <header
-      class="fixed w-full max-w-6xl mx-auto top-0 md:top-5 left-1/2 transform -translate-x-1/2 z-50 bg-darkBg/60 backdrop-blur-lg border border-white/10 rounded-none md:rounded-full px-6 md:px-12 py-4"
+      id="main-header"
+      class="fixed w-full max-w-6xl mx-auto top-0 md:top-5 left-1/2 transform z-50 bg-darkBg/60 backdrop-blur-lg border border-white/10 rounded-none md:rounded-full px-6 md:px-12 py-4"
     >
       <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-primary tracking-wider">
+        <h2 id="navbar-logo" class="text-2xl font-bold text-primary tracking-wider">
           &lt;Danny<span class="text-white">S&gt;</span>
         </h2>
 
@@ -287,6 +440,9 @@
         ></a>
       </div>
     </div>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
 
     <section
       id="home"
@@ -1294,6 +1450,7 @@
         >. All Rights Reserved.
       </p>
     </footer>
+    </main>
 
     <div
       id="cvModal"
@@ -1345,6 +1502,6 @@
       </div>
     </div>
 
-    <script src="/src/js/main.js"></script>
+    <script src="src/js/main.js"></script>
   </body>
 </html>
