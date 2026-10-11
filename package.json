@@ -5,9 +5,9 @@
     "esbuild": "^0.28.2"
   },
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify",
     "build:js": "esbuild src/js/main.js --minify --target=es2018 --outfile=dist/main.js",
     "build": "npm run build:css && npm run build:js",
-    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch"
   }
 }
