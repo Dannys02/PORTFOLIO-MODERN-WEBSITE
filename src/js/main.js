@@ -11,6 +11,15 @@ window.addEventListener("DOMContentLoaded", () => {
   const mainContent = document.getElementById("main-content");
   const navbarLogo = document.getElementById("navbar-logo");
 
+  // Mobile: preloader dilewati, konten langsung tampil
+  if (document.documentElement.classList.contains("skip-preloader")) {
+    preloader.remove();
+    document.body.classList.remove("overflow-hidden");
+    mainHeader.classList.add("header-visible");
+    mainContent.classList.add("content-visible");
+    return;
+  }
+
   // Lock scroll during preloader
   document.body.classList.add("overflow-hidden");
   window.scrollTo(0, 0);

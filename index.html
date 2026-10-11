@@ -71,6 +71,12 @@
     <link rel="stylesheet" href="./dist/output.css" />
     <script src="src/js/vendor/aos.js" defer></script>
     <script src="dist/main.js" defer></script>
+    <script>
+      // Mobile: lewati preloader agar konten langsung tampil
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        document.documentElement.classList.add("skip-preloader");
+      }
+    </script>
 
     <!-- <script>
       tailwind.config = {
@@ -262,6 +268,25 @@
       #main-content.content-visible {
         opacity: 1;
         transform: translateY(0);
+      }
+
+      /* Mobile: tanpa preloader */
+      .skip-preloader #preloader {
+        display: none;
+      }
+
+      .skip-preloader #main-header {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+
+      .skip-preloader #main-content {
+        opacity: 1;
+        transform: none;
+      }
+
+      .skip-preloader body {
+        overflow: visible;
       }
     </style>
   </head>
@@ -531,40 +556,50 @@
               >
                 <!-- gambar 1 depan-->
                 <div class="absolute inset-0 [backface-visibility:hidden]">
-                  <img
-                    class="h-full w-full rounded-xl object-cover object-top cursor-pointer border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
-                    src="src/assets/personal/dannys-320.webp"
-                    srcset="
-                      src/assets/personal/dannys-320.webp 320w,
-                      src/assets/personal/dannys-640.webp 640w
-                    "
-                    sizes="300px"
-                    width="320"
-                    height="427"
-                    loading="lazy"
-                    decoding="async"
-                    alt="About Image"
-                  />
+                  <picture class="contents">
+                    <source media="(max-width: 767px)" type="image/webp"
+                      srcset="src/assets/personal/dannys-320.webp 320w, src/assets/personal/dannys-480.webp 480w, src/assets/personal/dannys-640.webp 640w, src/assets/personal/dannys-824.webp 824w"
+                      sizes="300px" />
+                    <img
+                      class="h-full w-full rounded-xl object-cover object-top cursor-pointer border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
+                      src="src/assets/personal/dannys-320.webp"
+                      srcset="
+                        src/assets/personal/dannys-320.webp 320w,
+                        src/assets/personal/dannys-640.webp 640w
+                      "
+                      sizes="300px"
+                      width="320"
+                      height="427"
+                      loading="lazy"
+                      decoding="async"
+                      alt="About Image"
+                    />
+                  </picture>
                 </div>
 
                 <!-- gambar 2 belakang-->
                 <div
                   class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(-180deg)]"
                 >
-                  <img
-                    class="h-full w-full rounded-xl object-cover object-top cursor-pointer border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
-                    src="src/assets/personal/saya-320.webp"
-                    srcset="
-                      src/assets/personal/saya-320.webp 320w,
-                      src/assets/personal/saya-640.webp 640w
-                    "
-                    sizes="300px"
-                    width="320"
-                    height="427"
-                    loading="lazy"
-                    decoding="async"
-                    alt="About Image"
-                  />
+                  <picture class="contents">
+                    <source media="(max-width: 767px)" type="image/webp"
+                      srcset="src/assets/personal/saya-320.webp 320w, src/assets/personal/saya-480.webp 480w, src/assets/personal/saya-640.webp 640w, src/assets/personal/saya-720.webp 720w"
+                      sizes="300px" />
+                    <img
+                      class="h-full w-full rounded-xl object-cover object-top cursor-pointer border border-white/10 hover:scale-105 transition duration-300 shadow-2xl"
+                      src="src/assets/personal/saya-320.webp"
+                      srcset="
+                        src/assets/personal/saya-320.webp 320w,
+                        src/assets/personal/saya-640.webp 640w
+                      "
+                      sizes="300px"
+                      width="320"
+                      height="427"
+                      loading="lazy"
+                      decoding="async"
+                      alt="About Image"
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
@@ -604,11 +639,16 @@
           <div class="h-full" data-aos="fade-up">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/portfolio/Barbeshop.webp"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Barbershop Website"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/portfolio/Barbeshop-480.webp 480w, src/assets/portfolio/Barbeshop-800.webp 800w, src/assets/portfolio/Barbeshop-1100.webp 1100w, src/assets/portfolio/Barbeshop.webp 1164w"
+                    sizes="(max-width: 560px) 512px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/portfolio/Barbeshop.webp"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Barbershop Website"
+                  />
+                </picture>
               </div>
               <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
                 <h3 class="text-xl font-bold mb-2">Barbershop Website</h3>
@@ -638,11 +678,16 @@
           <div class="h-full" data-aos="fade-up" data-aos-delay="100">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/portfolio/Restoran.webp"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Restaurant Website"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/portfolio/Restoran-480.webp 480w, src/assets/portfolio/Restoran-800.webp 800w, src/assets/portfolio/Restoran-1100.webp 1100w, src/assets/portfolio/Restoran.webp 1384w"
+                    sizes="(max-width: 658px) 610px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/portfolio/Restoran.webp"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Restaurant Website"
+                  />
+                </picture>
               </div>
               <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
                 <h3 class="text-xl font-bold mb-2">Restaurant Website</h3>
@@ -680,11 +725,16 @@
           <div class="h-full" data-aos="fade-up" data-aos-delay="200">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/portfolio/Kasir.webp"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Cashier Website System"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/portfolio/Kasir-480.webp 480w, src/assets/portfolio/Kasir-800.webp 800w, src/assets/portfolio/Kasir.webp 1020w"
+                    sizes="(max-width: 500px) 452px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/portfolio/Kasir.webp"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Cashier Website System"
+                  />
+                </picture>
               </div>
               <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
                 <h3 class="text-xl font-bold mb-2">Cashier Website System</h3>
@@ -714,11 +764,16 @@
           <div class="h-full" data-aos="fade-up" data-aos-delay="300">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/portfolio/AhaConvert_KasirLaravel.webp"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Simple Cashier Website"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/portfolio/AhaConvert_KasirLaravel-480.webp 480w, src/assets/portfolio/AhaConvert_KasirLaravel-800.webp 800w, src/assets/portfolio/AhaConvert_KasirLaravel.webp 1353w"
+                    sizes="(max-width: 585px) 537px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/portfolio/AhaConvert_KasirLaravel.webp"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Simple Cashier Website"
+                  />
+                </picture>
               </div>
               <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
                 <h3 class="text-xl font-bold mb-2">Simple Cashier Website</h3>
@@ -757,11 +812,16 @@
           <div class="h-full" data-aos="fade-up" data-aos-delay="400">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/portfolio/AhaConvert_Keyfood.webp"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Simple Landing Page"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/portfolio/AhaConvert_Keyfood-480.webp 480w, src/assets/portfolio/AhaConvert_Keyfood-800.webp 800w, src/assets/portfolio/AhaConvert_Keyfood.webp 1350w"
+                    sizes="(max-width: 586px) 538px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/portfolio/AhaConvert_Keyfood.webp"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Simple Landing Page"
+                  />
+                </picture>
               </div>
               <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
                 <h3 class="text-xl font-bold mb-2">Simple Landing Page</h3>
@@ -795,11 +855,16 @@
           <div class="h-full" data-aos="fade-up" data-aos-delay="500">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/portfolio/AhaConvert_WebSchool.webp"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Website School Project"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/portfolio/AhaConvert_WebSchool-480.webp 480w, src/assets/portfolio/AhaConvert_WebSchool-800.webp 800w, src/assets/portfolio/AhaConvert_WebSchool.webp 1353w"
+                    sizes="(max-width: 587px) 539px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/portfolio/AhaConvert_WebSchool.webp"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Website School Project"
+                  />
+                </picture>
               </div>
               <div class="flex shrink-0 flex-col p-6 flex-1 justify-between">
                 <h3 class="text-xl font-bold mb-2">Website School Project</h3>
@@ -1054,11 +1119,16 @@
           <div class="h-full" data-aos="fade-up">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/certificate/certificate1.jpeg"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Certificate 1"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/certificate/certificate1-480.webp 480w, src/assets/certificate/certificate1-800.webp 800w, src/assets/certificate/certificate1-1100.webp 1100w, src/assets/certificate/certificate1-1280.webp 1280w"
+                    sizes="(max-width: 415px) 367px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/certificate/certificate1.jpeg"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Certificate 1"
+                  />
+                </picture>
               </div>
               <div class="p-6 flex flex-col flex-1 justify-between">
                 <h3 class="text-lg font-bold mb-2 flex-grow">
@@ -1081,11 +1151,16 @@
           <div class="h-full" data-aos="fade-up" data-aos-delay="100">
             <div class="glass-card flex flex-col h-full rounded-2xl overflow-hidden group">
               <div class="h-64 overflow-hidden">
-                <img
-                  src="src/assets/certificate/certificate2.jpeg"
-                  class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                  alt="Certificate 2"
-                />
+                <picture class="contents">
+                  <source media="(max-width: 767px)" type="image/webp"
+                    srcset="src/assets/certificate/certificate2-480.webp 480w, src/assets/certificate/certificate2-800.webp 800w, src/assets/certificate/certificate2-1100.webp 1100w, src/assets/certificate/certificate2-1280.webp 1280w"
+                    sizes="(max-width: 399px) 351px, calc(100vw - 48px)" />
+                  <img
+                    src="src/assets/certificate/certificate2.jpeg"
+                    class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                    alt="Certificate 2"
+                  />
+                </picture>
               </div>
               <div class="p-6 flex flex-col flex-1 justify-between">
                 <h3 class="text-lg font-bold mb-2 flex-grow">
