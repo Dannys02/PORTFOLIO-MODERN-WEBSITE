@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./css/aos-lite.css";
 
 @source "../**/*.html";
 
@@ -9,4 +10,42 @@
   --color-glass: rgba(255, 255, 255, 0.05);
 
   --background-image-cosmic-gradient: radial-gradient(circle at 50% 100%, #1f0309, #090204 80%);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../src/assets/fonts/poppins-latin-300-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../src/assets/fonts/poppins-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../src/assets/fonts/poppins-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../src/assets/fonts/poppins-latin-700-normal.woff2") format("woff2");
+}
+
+/* Teks preloader disembunyikan sampai dianimasikan oleh main.js */
+#loader-welcome,
+#loader-brand-text {
+  visibility: hidden;
 }

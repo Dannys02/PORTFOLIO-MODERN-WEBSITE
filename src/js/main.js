@@ -60,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
       loaderProgress.style.display = "none";
 
       // Animasi muncul dari bawah ke atas
+      loaderWelcome.style.visibility = "visible";
       loaderWelcome.style.transition = "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)";
       loaderWelcome.style.opacity = "1";
       loaderWelcome.style.transform = "translateY(0)";
@@ -88,6 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
     loaderBrand.style.transformOrigin = "center center";
 
     // Muncul dan Zoom dari kecil ke besar secara mulus di tengah layar
+    loaderBrand.style.visibility = "visible";
     loaderBrand.style.transition = "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)";
     loaderBrand.style.opacity = "1";
     loaderBrand.style.transform = "translate(-50%, -50%) scale(1.35)";
