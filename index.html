@@ -111,6 +111,10 @@
     </script> -->
 
     <style>
+      html {
+        overflow-x: clip;
+      }
+
       body {
         font-family: "Poppins", sans-serif;
         background: #090204;
@@ -1206,7 +1210,7 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 [&>*]:min-w-0">
           <div class="space-y-8" data-aos="fade-up">
             <div class="flex items-start md:items-center gap-6">
               <div
@@ -1232,7 +1236,7 @@
                 <p class="text-sm text-gray-400 uppercase tracking-widest">
                   Email
                 </p>
-                <p class="text-lg font-bold">
+                <p class="text-base sm:text-lg font-bold break-all">
                   danis.samsunga01@gmail.com
                 </p>
               </div>
@@ -1262,8 +1266,8 @@
               </div>
             </div>
 
-            <div class="h-[200px] flex items-start gap-6">
-              <div class="h-full flex justify-start">
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <div class="shrink-0 flex justify-start">
                 <div
                   class="w-14 h-14 bg-primary/10 flex items-center justify-center rounded-2xl text-primary text-xl"
                 >
@@ -1287,14 +1291,14 @@
                 </div>
               </div>
 
-              <div>
+              <div class="w-full min-w-0">
                 <p class="text-sm text-gray-400 uppercase tracking-widest mb-2">
                   Address
                 </p>
                 <iframe
                   title="Lokasi Dannys Martha F di Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d845.9714576858041!2d114.19569052045544!3d-8.362149610116187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1788324353237!5m2!1sid!2sid"
-                  class="rounded-lg h-[150px] w-[300px] md:h-[200px] md:w-[400px]"
+                  class="block rounded-lg w-full max-w-[400px] h-[200px]"
                   style="border: 0"
                   allowfullscreen=""
                   loading="lazy"
