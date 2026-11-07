@@ -208,9 +208,13 @@ function ketikLoop() {
 ketikLoop();
 
 // Mobile Menu Toggle
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("hidden");
+window.toggleMenu = function () {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener("click", window.toggleMenu);
 }
 
 // Modal Logic
