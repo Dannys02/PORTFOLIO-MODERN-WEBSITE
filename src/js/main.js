@@ -1,3 +1,20 @@
+import Lenis from "lenis";
+
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // --- PRELOADER ANIMATION SEQUENCE ---
 window.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
@@ -15,12 +32,14 @@ window.addEventListener("DOMContentLoaded", () => {
   if (document.documentElement.classList.contains("skip-preloader")) {
     preloader.remove();
     document.body.classList.remove("overflow-hidden");
+    lenis.start();
     mainHeader.classList.add("header-visible");
     mainContent.classList.add("content-visible");
     return;
   }
 
   // Lock scroll during preloader
+  lenis.stop();
   document.body.classList.add("overflow-hidden");
   window.scrollTo(0, 0);
 
@@ -141,6 +160,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // Selesai preloader: hapus elemen & aktifkan scroll
             preloader.remove();
             document.body.classList.remove("overflow-hidden");
+            lenis.start();
 
             // Refresh AOS agar efek scroll animation berjalan lancar
             AOS.refresh();
@@ -202,6 +222,7 @@ if (modalCVBtn && modal) {
   modalCVBtn.onclick = () => {
     modal.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
+    lenis.stop();
   };
 }
 
@@ -209,6 +230,7 @@ if (closeModalBtn && modal) {
   closeModalBtn.onclick = () => {
     modal.classList.add("hidden");
     document.body.classList.remove("overflow-hidden");
+    lenis.start();
   };
 }
 
@@ -259,3 +281,20 @@ if (formPage) {
     );
   };
 }
+
+// Smooth scroll for anchor navigation links via Lenis
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href");
+    if (!targetId || targetId === "#") return;
+
+    const targetEl = document.querySelector(targetId);
+    if (targetEl) {
+      e.preventDefault();
+      lenis.scrollTo(targetEl, {
+        offset: -20,
+        duration: 1.2,
+      });
+    }
+  });
+});

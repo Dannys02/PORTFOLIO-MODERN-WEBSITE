@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./css/aos-lite.css";
+@import "lenis/dist/lenis.css";
 
 @source "../**/*.html";
 
