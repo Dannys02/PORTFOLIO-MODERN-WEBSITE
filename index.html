@@ -191,10 +191,13 @@
         transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
       }
 
-      .group:hover .flip-card-inner,
-      .group:focus-visible .flip-card-inner,
-      .group.is-flipped .flip-card-inner {
-        transform: rotateY(-180deg);
+      /* Efek hover bolak-balik hanya aktif di desktop (layar besar & mouse hover) */
+      @media (min-width: 1024px) and (hover: hover) {
+        .group:hover .flip-card-inner,
+        .group:focus-visible .flip-card-inner,
+        .group.is-flipped .flip-card-inner {
+          transform: rotateY(-180deg);
+        }
       }
 
       #name-typing::after {
