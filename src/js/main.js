@@ -35,6 +35,8 @@ window.addEventListener("DOMContentLoaded", () => {
     lenis.start();
     mainHeader.classList.add("header-visible");
     mainContent.classList.add("content-visible");
+    startAOS();
+    startTyping();
     return;
   }
 
@@ -156,6 +158,10 @@ window.addEventListener("DOMContentLoaded", () => {
           preloader.style.transition = "opacity 0.85s ease-out";
           preloader.style.opacity = "0";
 
+          // Mulai animasi AOS dan efek ketik saat konten mulai terlihat oleh pengunjung!
+          startAOS();
+          startTyping();
+
           setTimeout(() => {
             // Selesai preloader: hapus elemen & aktifkan scroll
             preloader.remove();
@@ -171,8 +177,19 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// AOS Animation Initialize
-AOS.init({ duration: 1000, once: true });
+// Inisialisasi AOS setelah preloader selesai agar animasi section Home tidak terlewat
+let aosInitialized = false;
+function startAOS() {
+  if (aosInitialized || typeof AOS === "undefined") return;
+  aosInitialized = true;
+  AOS.init({ duration: 1000, once: true });
+}
+
+// Fallback inisialisasi jika ada kendala preloader
+setTimeout(() => {
+  startAOS();
+  startTyping();
+}, 8000);
 
 // Typing Effect
 const textMain = " Dannys Martha F";
@@ -205,7 +222,12 @@ function ketikLoop() {
   setTimeout(ketikLoop, isDeleting ? 50 : 100);
 }
 
-ketikLoop();
+let typingStarted = false;
+function startTyping() {
+  if (typingStarted) return;
+  typingStarted = true;
+  ketikLoop();
+}
 
 // Mobile Menu Toggle
 window.toggleMenu = function () {
