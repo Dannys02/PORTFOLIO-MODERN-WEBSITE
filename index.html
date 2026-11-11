@@ -583,16 +583,13 @@
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            <!-- Interactive Photo Card (Hover, Focus, or Tap to Flip) -->
+            <!-- Interactive Photo Card (Hover on desktop) -->
             <div class="lg:col-span-5 flex flex-col items-center">
               <div
                 id="aboutFlipCard"
-                tabindex="0"
-                role="button"
-                aria-label="Flip photo card to see alternate portrait"
-                aria-pressed="false"
+                aria-label="Dannys Martha Favrillia portrait"
                 data-aos="fade-up"
-                class="group relative h-[380px] w-[285px] sm:h-[400px] sm:w-[300px] z-10 flex justify-center [perspective:1000px] select-none"
+                class="group relative h-[380px] w-[285px] sm:h-[400px] sm:w-[300px] z-10 flex justify-center [perspective:1000px] select-none pointer-events-none lg:pointer-events-auto"
               >
                 <div
                   class="flip-card-inner relative w-full h-full shadow-2xl rounded-2xl"

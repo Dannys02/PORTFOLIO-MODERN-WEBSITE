@@ -1,11 +1,20 @@
 import Lenis from "lenis";
 
 // Initialize Lenis Smooth Scroll
+// Di mobile/touchscreen, matikan touch simulation Lenis (syncTouch: false)
+// agar browser mobile menggunakan native momentum scrolling tanpa benturan koordinat/jump.
+const isTouchDevice =
+  typeof window !== "undefined" &&
+  (window.matchMedia("(pointer: coarse)").matches ||
+    window.matchMedia("(max-width: 1023px)").matches ||
+    "ontouchstart" in window);
+
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
-  touchMultiplier: 2,
+  syncTouch: false,
+  touchMultiplier: isTouchDevice ? 1 : 2,
 });
 
 function raf(time) {
