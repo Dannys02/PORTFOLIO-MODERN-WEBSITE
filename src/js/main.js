@@ -1,28 +1,29 @@
 import Lenis from "lenis";
 
 // Initialize Lenis Smooth Scroll
-// Di mobile/touchscreen, matikan touch simulation Lenis (syncTouch: false)
-// agar browser mobile menggunakan native momentum scrolling tanpa benturan koordinat/jump.
+// Hanya aktifkan Lenis di desktop/mouse. Di layar sentuh/mobile, nonaktifkan Lenis
+// agar mobile menggunakan 100% native momentum scrolling tanpa perebutan kendali viewport atau scroll jump.
 const isTouchDevice =
   typeof window !== "undefined" &&
   (window.matchMedia("(pointer: coarse)").matches ||
     window.matchMedia("(max-width: 1023px)").matches ||
     "ontouchstart" in window);
 
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true,
-  syncTouch: false,
-  touchMultiplier: isTouchDevice ? 1 : 2,
-});
+let lenis = null;
+if (!isTouchDevice) {
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
 
-function raf(time) {
-  lenis.raf(time);
+  function raf(time) {
+    if (lenis) lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
   requestAnimationFrame(raf);
 }
-
-requestAnimationFrame(raf);
 
 // --- PRELOADER ANIMATION SEQUENCE ---
 window.addEventListener("DOMContentLoaded", () => {
@@ -41,7 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (document.documentElement.classList.contains("skip-preloader")) {
     preloader.remove();
     document.body.classList.remove("overflow-hidden");
-    lenis.start();
+    if (lenis) lenis.start();
     mainHeader.classList.add("header-visible");
     mainContent.classList.add("content-visible");
     startAOS();
@@ -50,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Lock scroll during preloader
-  lenis.stop();
+  if (lenis) lenis.stop();
   document.body.classList.add("overflow-hidden");
   window.scrollTo(0, 0);
 
@@ -175,7 +176,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // Selesai preloader: hapus elemen & aktifkan scroll
             preloader.remove();
             document.body.classList.remove("overflow-hidden");
-            lenis.start();
+            if (lenis) lenis.start();
 
             // Refresh AOS agar efek scroll animation berjalan lancar
             AOS.refresh();
@@ -257,7 +258,7 @@ if (modalCVBtn && modal) {
   modalCVBtn.onclick = () => {
     modal.classList.remove("hidden");
     document.body.classList.add("overflow-hidden");
-    lenis.stop();
+    if (lenis) lenis.stop();
   };
 }
 
@@ -265,7 +266,7 @@ if (closeModalBtn && modal) {
   closeModalBtn.onclick = () => {
     modal.classList.add("hidden");
     document.body.classList.remove("overflow-hidden");
-    lenis.start();
+    if (lenis) lenis.start();
   };
 }
 
@@ -317,7 +318,7 @@ if (formPage) {
   };
 }
 
-// Smooth scroll for anchor navigation links via Lenis
+// Smooth scroll for anchor navigation links (Lenis on desktop, smooth native on mobile)
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     const targetId = this.getAttribute("href");
@@ -326,10 +327,17 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const targetEl = document.querySelector(targetId);
     if (targetEl) {
       e.preventDefault();
-      lenis.scrollTo(targetEl, {
-        offset: -20,
-        duration: 1.2,
-      });
+      if (lenis) {
+        lenis.scrollTo(targetEl, {
+          offset: -20,
+          duration: 1.2,
+        });
+      } else {
+        const yOffset = -20;
+        const y =
+          targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
     }
   });
 });
